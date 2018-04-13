@@ -1,34 +1,34 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import {COLOR, ThemeProvider} from 'react-native-material-ui'
-
+import { StatusBar } from 'react-native';
+import {ThemeProvider} from 'react-native-material-ui'
+import {TabNavigator, StackNavigator} from 'react-navigation'
+import style from './assets/style/Style'
 import Welcome from './components/Welcome'
 import Home from './components/Home'
+import Login from './components/Login'
+import Main from './components/Main'
 
+
+import { YellowBox } from 'react-native';
+YellowBox.ignoreWarnings([
+    'Warning: componentWillMount is deprecated',
+    'Warning: componentWillReceiveProps is deprecated',
+]);
 
 const RootStack = StackNavigator(
     {
         Welcome: { screen: Welcome,},
         Home: { screen: Home,},
+        Login: { screen: Login,},
+        Main: { screen: Main,},
     },
     {
-        initialRouteName: 'Welcome',
+        initialRouteName: 'Main',
     }
 );
 
-const uiTheme = {
-    palette: {
-        primaryColor: COLOR.green500,
-    },
-    toolbar: {
-        container: {
-            height: 50,
-        },
-    },
-};
-
-
 export default class App extends React.Component {
+
     render() {
         return (
             <ThemeProvider uiTheme={uiTheme}>
@@ -37,3 +37,19 @@ export default class App extends React.Component {
         )
     }
 }
+
+
+
+
+/*Material-UI style customization*/
+const uiTheme = {
+    palette: {
+        primaryColor: style.green,
+    },
+    toolbar: {
+        container: {
+            marginTop: StatusBar.currentHeight,
+            height: 50,
+        },
+    }
+};
