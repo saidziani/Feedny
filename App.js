@@ -7,9 +7,11 @@ import Welcome from './components/Welcome'
 import Home from './components/Home'
 import Login from './components/Login'
 import Main from './components/Main'
+import Details from './components/Details'
 
 
 import { YellowBox } from 'react-native';
+import Categories from "./components/Categories";
 YellowBox.ignoreWarnings([
     'Warning: componentWillMount is deprecated',
     'Warning: componentWillReceiveProps is deprecated',
@@ -21,9 +23,11 @@ const RootStack = StackNavigator(
         Home: { screen: Home,},
         Login: { screen: Login,},
         Main: { screen: Main,},
+        Categories: {screen: Categories,},
+        Details: { screen: Details,},
     },
     {
-        initialRouteName: 'Main',
+        initialRouteName: 'Categories',
     }
 );
 

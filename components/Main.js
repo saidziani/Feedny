@@ -1,10 +1,14 @@
 import React from 'react'
-import { Image, Text, View, StatusBar } from 'react-native';
-import style from '../assets/style/Style'
+import { Image, Text, View, StatusBar, ScrollView } from 'react-native';
+
 import { Toolbar, Button, BottomNavigation, Icon } from 'react-native-material-ui';
-import { TextField } from 'react-native-material-textfield';
+
+import { Col, Row, Grid } from "react-native-easy-grid";
+
 import Container from './Container';
 import { PropTypes } from 'prop-types';
+
+import style from '../assets/style/Style'
 
 const propTypes = {
     navigation: PropTypes.shape({
@@ -33,15 +37,59 @@ export default class Welcome extends React.Component{
     constructor(props) {
         super(props);
 
-        this.state = { active: 'today' };
+        this.state = {
+            active: 'today',
+            category: this.props.navigation.state.params.category,
+        };
     }
 
     render(){
         return(
             <Container>
-                <View style={style.centerAll}>
-                    <Icon name={this.state.active} size={54} />
+                <View>
+                    <Text>
+                        {this.state.category}
+                    </Text>
                 </View>
+                <ScrollView>
+                    <Grid>
+                        <Row style={{height:200}}>
+                            <View style={{backgroundColor: style.white}, style.centerAll}>
+                                <Image style={style.imgR} source={require('../assets/img/articles/1.jpg')} />
+                            </View>
+                        </Row>
+                        <Row style={{height:200}}>
+                            <Col>
+                                <View style={{backgroundColor: style.white}, style.centerAll}>
+                                    <Image style={style.imgC} source={require('../assets/img/articles/2.jpg')} />
+                                </View>
+                            </Col>
+                            <Col>
+                                <View style={{backgroundColor: style.orange}, style.centerAll}>
+                                    <Image style={style.imgC} source={require('../assets/img/articles/3.jpg')} />
+                                </View>
+                            </Col>
+                        </Row>
+                        <Row style={{height:200}}>
+                            <Col>
+                                <View style={{backgroundColor: style.white}, style.centerAll}>
+                                    <Image style={style.imgC} source={require('../assets/img/articles/1.jpg')} />
+                                </View>
+                            </Col>
+                            <Col>
+                                <View style={{backgroundColor: style.orange}, style.centerAll}>
+                                    <Image style={style.imgC} source={require('../assets/img/articles/3.jpg')} />
+                                </View>
+                            </Col>
+                        </Row>
+                        <Row style={{height:200}}>
+                            <View style={{backgroundColor: style.white}, style.centerAll}>
+                                <Image style={style.imgR} source={require('../assets/img/articles/2.jpg')} />
+                            </View>
+                        </Row>
+                    </Grid>
+                </ScrollView>
+
                 <BottomNavigation active={this.state.active} >
                     <BottomNavigation.Action
                         key="today"

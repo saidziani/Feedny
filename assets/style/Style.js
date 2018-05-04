@@ -27,7 +27,14 @@ export default {
     button:{
         marginTop: 30
     },
-
+    imgC:{
+        maxWidth: 150,
+        maxHeight: 150
+    },
+    imgR:{
+        maxWidth: 360,
+        maxHeight: 180,
+    },
 
     /*Extra*/
     centerAll: {
@@ -41,6 +48,19 @@ export default {
     logo:{
         maxWidth: 150,
         maxHeight: 70
-    }
+    },
 
+    row:{
+        height: 180,
+        margin: 5,
+    },
+
+    category:{
+        zIndex: 99999,
+        position: 'absolute',
+        top: 10,
+        left: 10,
+        fontSize: 30,
+        color: white,
+    }
 }
