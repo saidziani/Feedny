@@ -16,7 +16,7 @@ const propTypes = {
     }).isRequired,
 };
 
-export default class Welcome extends React.Component{
+export default class Main extends React.Component{
 
     static navigationOptions = (navigationProps) => {
         return {
