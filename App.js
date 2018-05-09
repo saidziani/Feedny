@@ -7,7 +7,8 @@ import Welcome from './components/Welcome'
 import Home from './components/Home'
 import Login from './components/Login'
 import Main from './components/Main'
-import Details from './components/Details'
+import Articles from './components/Articles'
+import Personalize from './components/Personalize'
 
 
 import { YellowBox } from 'react-native';
@@ -24,7 +25,8 @@ const RootStack = StackNavigator(
         Login: { screen: Login,},
         Main: { screen: Main,},
         Categories: {screen: Categories,},
-        Details: { screen: Details,},
+        Articles: { screen: Articles,},
+        Personalize: { screen: Personalize,},
     },
     {
         initialRouteName: 'Categories',
@@ -43,12 +45,10 @@ export default class App extends React.Component {
 }
 
 
-
-
 /*Material-UI style customization*/
 const uiTheme = {
     palette: {
-        primaryColor: style.green,
+        primaryColor: style.black,
     },
     toolbar: {
         container: {
