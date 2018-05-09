@@ -16,7 +16,7 @@ const propTypes = {
     }).isRequired,
 };
 
-export default class Categories extends React.Component{
+export default class Personalize extends React.Component{
 
     static navigationOptions = (navigationProps) => {
         return {
@@ -43,7 +43,7 @@ export default class Categories extends React.Component{
 
     details (category) {
         //this.setState({category: category})
-        this.props.navigation.navigate('Details', {category: category})
+        this.props.navigation.navigate('Articles', {category: category})
     }
 
     render(){
