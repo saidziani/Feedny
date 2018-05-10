@@ -29,7 +29,7 @@ const RootStack = StackNavigator(
         Personalize: { screen: Personalize,},
     },
     {
-        initialRouteName: 'Categories',
+        initialRouteName: 'Home',
     }
 );
 
