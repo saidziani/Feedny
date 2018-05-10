@@ -31,7 +31,7 @@ export default class ArticleRow extends React.Component{
                         {this.props.article.summary}
                     </Text>
                     <View>
-                        <Image style={style.imgS} source={{uri:'../assets/img/articles/1.jpg'}} />
+                        <Image style={style.imgS} source={require('../assets/img/articles/1.jpg')} />
                         <Text style={style.sourceName}>
                             {this.props.article.source}
                         </Text>
