@@ -1,4 +1,4 @@
-import {StatusBar} from "react-native";
+import {StatusBar, StyleSheet} from "react-native";
 import {COLOR} from "react-native-material-ui";
 
 const white = '#f5f5f5'
@@ -103,10 +103,9 @@ export default {
     articleShow:{
         height: 130,
         backgroundColor: '#fff',
-        marginLeft: 10, marginRight: 10,
         padding: 14,
         borderRadius: 5,
-        marginBottom:1,marginTop:1
+        marginBottom:1,
     },
     articleTitle:{
         fontSize:18,
@@ -134,7 +133,49 @@ export default {
     },
     columnSmall:{
         paddingLeft: 7, justifyContent: 'center'
-    }
+    },
 
+    /*Home*/
+    welcomePanel:{
+        height: 250
+    },
+    hiYou:{
+        backgroundColor: 'rgba(0, 0, 0, 0.3)',
+        height: 80,
+        borderRadius: 5,
+        padding: 15,
+    },
+    hiMsg:{
+        color: white,
+        fontSize: 20
+    },
+    topFive: {
+        padding: 15,
+        marginTop: 65,
+        height: 80,
+    },
+    topFiveMsg:{
+        fontSize: 30,
+        color: white,
+    },
+    topFiveLittleMsg:{
+        marginTop:8,
+        fontSize: 18,
+        color: white,
+    },
+    topFiveHr:{
+        marginTop: 15,
+        width: 100,
+        borderBottomWidth: 2,
+        borderBottomColor: white,
+    },
+    backgroundImage: {
+        flex: 1,
+        width: null,
+        height: null,
+        shadowOffset:{  width: 200,  height: 200,  },
+        shadowColor: black,
+        shadowOpacity: 1.0,
+    }
 
 }
