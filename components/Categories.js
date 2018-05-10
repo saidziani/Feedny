@@ -62,8 +62,10 @@ export default class Personalize extends React.Component{
 
                         <Row style={style.row}>
                             <View style={{backgroundColor: style.white}, style.centerAll}>
-                                <Text style={style.category}>Sport</Text>
-                                <Image style={style.imgR} source={require('../assets/img/articles/2.jpg')} />
+                                <TouchableOpacity onPress={() => this.details("sport")}>
+                                    <Text style={style.category}>Sport</Text>
+                                    <Image style={style.imgR} source={require('../assets/img/articles/2.jpg')} />
+                                </TouchableOpacity>
                             </View>
                         </Row>
 
