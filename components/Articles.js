@@ -44,70 +44,35 @@ export default class Articles extends React.Component {
 
         this.state = {
             active: 'today',
-            //category: this.props.navigation.state.params.category,
+            category: this.props.navigation.state.params.category,
             articles: null
         }
         this.fetchArticles()
     }
 
     fetchArticles() {
-        /*axios.get(`http://api.openweathermap.org/data/2.5/forecast?q=london&mode=json&cnt=20&units=metric&appid=89663512909716c62367d9089f12de93`).
-        then((response) => {
+        axios.get(`http://192.168.1.234:5000/api/articles/category=`+this.state.category).then((response) => {
             this.setState({articles: response.data})
-        })*/
-        const data = {
-            "category":"news",
-            "articles":[
-                {
-                    "article_id":1,
-                    "title":"la mere de boufarik",
-                    "content":"je suii efnenl zfln zelfnlznglz USTHB zfuizfb zef."
-                },
-                {
-                    "article_id":2,
-                    "title":"Black Friday",
-                    "content":"bkack friday s one off best seller..."
-                }
-            ]
-        };
-
+        }).catch((error)=>{console.log(error)})
     }
 
 
     render() {
-        const data = {
-            "category":"news",
-            "articles":[
-                {
-                    "article_id":1,
-                    "title":"Let's make America Great Again with Donald Trump",
-                    "summary":"je suii efnenl zfln zelfnlznglz USTHB zfuizfb zef",
-                    "content":"je suii efnenl zfln zelfnlznglz USTHB zfuizfb zef" +
-                    " je suii efnenl zfln zelfnlznglz USTHB zfuizfb zef " +
-                    "je suii efnenl zfln zelfnlznglz USTHB zfuizfb zef.",
-                    "image":"../assets/img/articles/1.jpg",
-                    "source":"France 24",
-                    "time":"Il y a 5 heures",
-                    "sourceImage":"../assets/img/articles/2.jpg"
-                },
-            ]
-        };
-        //this.setState({articles: data})
 
-
-        if (data === null) {
+        if (this.state.articles === null) {
             return (
                 <ActivityIndicator color={style.red} size="large"/>
             )
         }else{
             const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-
             return (
-                <ListView
-                    dataSource={ds.cloneWithRows(data.articles)}
-                    renderRow={(row, j, i) => <ArticleRow article={row} index={parseInt(i, 10)} />}
-                    //renderRow={(row) => <Text>{row.content} </Text>}
-                />
+                <View>
+                    <Text>{this.state.category}</Text>
+                    <ListView
+                        dataSource={ds.cloneWithRows(this.state.articles.articles)}
+                        renderRow={(row, j, i) => <ArticleRow article={row} index={parseInt(i, 10)} />}
+                    />
+                </View>
 
             )
         }
