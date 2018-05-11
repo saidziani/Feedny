@@ -7,6 +7,7 @@ const pink = '#ff5a5f'
 const orange = '#fc642d'
 const black = '#484848'
 const gray = '#767676'
+const whiteGray = '#e5e5e5'
 
 export default {
     white: white,
@@ -104,7 +105,7 @@ export default {
         height: 130,
         backgroundColor: '#fff',
         padding: 14,
-        borderRadius: 5,
+        borderRadius: 3,
         marginBottom:1,
     },
     articleTitle:{
@@ -142,7 +143,7 @@ export default {
     hiYou:{
         backgroundColor: 'rgba(0, 0, 0, 0.3)',
         height: 80,
-        borderRadius: 5,
+        borderRadius: 3,
         padding: 15,
     },
     hiMsg:{
@@ -176,6 +177,64 @@ export default {
         shadowOffset:{  width: 200,  height: 200,  },
         shadowColor: black,
         shadowOpacity: 1.0,
-    }
+    },
+    selection:{
+        backgroundColor: whiteGray,
+        padding: 15,
+        marginTop: 5,
+        height: 70,
+    },
+    selectionMsg:{
+        fontSize: 18,
+        color: black,
+    },
+    selectionLittleMsg:{
+        marginTop:5,
+        fontSize: 12,
+        color: black,
+    },
+    selectionHr:{
+        marginTop: 5,
+        width: 60,
+        borderBottomWidth: 2,
+        borderBottomColor: black,
+    },
+
+    /*Article Standard*/
+    articleStd:{
+        borderTopWidth: 10,
+        borderTopColor: whiteGray,
+        backgroundColor: white,
+        height: 170
+    },
+    articleStdTitle:{
+      fontSize: 18,
+        paddingTop: 5,
+        paddingBottom: 5
+    },
+    viewStd:{
+        padding: 15,
+    },
+    stdImgS:{
+        maxWidth: 23,
+        maxHeight: 23,
+        marginTop:20,
+        marginLeft: 15,
+    },
+    stdSourceName:{
+        fontSize:12, position:'absolute',marginTop:20,marginLeft:50
+    },
+    stdSourceTime:{
+        fontSize:10, position:'absolute',marginTop:30,marginLeft:50
+    },
+    stdIconOne:{
+        position:'absolute',marginTop:20,marginLeft:230,opacity:0.7
+    },
+    stdIconTwo:{
+        position:'absolute',marginTop:20,marginLeft:270,opacity:0.7
+    },
+    stdIconThree:{
+        position:'absolute',marginTop:20,marginLeft:310,opacity:0.7
+    },
 
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Image, Text, View, StatusBar, ScrollView, TouchableOpacity } from 'react-native';
+import { Image, Text, View, StatusBar, ScrollView, TouchableOpacity, StyleSheet } from 'react-native';
 
 import { Toolbar, Button, BottomNavigation, Icon } from 'react-native-material-ui';
 
@@ -10,13 +10,14 @@ import { PropTypes } from 'prop-types';
 
 import style from '../assets/style/Style'
 
+
 const propTypes = {
     navigation: PropTypes.shape({
         goBack: PropTypes.func.isRequired,
     }).isRequired,
 };
 
-export default class Personalize extends React.Component{
+export default class Categories extends React.Component{
 
     static navigationOptions = (navigationProps) => {
         return {
@@ -24,7 +25,7 @@ export default class Personalize extends React.Component{
                 <Toolbar
                     style={{backgroundColor: style.pink}}
                     leftElement="menu"
-                    centerElement=""
+                    centerElement="Categories"
                     searchable={{
                         autoFocus: true,
                         placeholder: 'Search',
@@ -37,6 +38,7 @@ export default class Personalize extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
+            active: 'Categories',
             category: ''
         };
     }
@@ -44,6 +46,11 @@ export default class Personalize extends React.Component{
     details (category) {
         //this.setState({category: category})
         this.props.navigation.navigate('Articles', {category: category})
+    }
+
+    moveMenuBottom (activated) {
+        this.setState({active: activated})
+        this.props.navigation.navigate(activated)
     }
 
     render(){
@@ -91,9 +98,36 @@ export default class Personalize extends React.Component{
                         </Row>
                     </Grid>
                 </ScrollView>
+                <BottomNavigation active={this.state.active}>
+                    <BottomNavigation.Action
+                        key="today"
+                        icon="today"
+                        label="Today"
+                        onPress={() => this.moveMenuBottom('Home')}
+                    />
+                    <BottomNavigation.Action
+                        key="people"
+                        icon="people"
+                        label="People"
+                        onPress={() => this.moveMenuBottom('Categories')}
+                    />
+                    <BottomNavigation.Action
+                        key="bookmark-border"
+                        icon="bookmark-border"
+                        label={null}
+                        onPress={() => this.moveMenuBottom('Categories')}
+                    />
+                    <BottomNavigation.Action
+                        key="settings"
+                        icon="settings"
+                        label="Settings"
+                        onPress={() => this.moveMenuBottom('Categories')}
+                    />
+                </BottomNavigation>
             </Container>
 
         )
     }
+
 
 }
