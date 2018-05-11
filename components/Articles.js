@@ -15,6 +15,8 @@ import style from '../assets/style/Style'
 
 import ArticleRow from './Row'
 
+import ArticleRowStd from './RowStd'
+
 const propTypes = {
     navigation: PropTypes.shape({
         goBack: PropTypes.func.isRequired,
@@ -29,7 +31,7 @@ export default class Articles extends React.Component {
                 <Toolbar
                     style={{backgroundColor: style.pink}}
                     leftElement="menu"
-                    centerElement=""
+                    centerElement="Category Name"
                     searchable={{
                         autoFocus: true,
                         placeholder: 'Search',
@@ -61,16 +63,15 @@ export default class Articles extends React.Component {
 
         if (this.state.articles === null) {
             return (
-                <ActivityIndicator color={style.red} size="large"/>
+                <ActivityIndicator style={style.centerAll} color={style.red} size="large"/>
             )
         }else{
             const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
             return (
                 <View>
-                    <Text>{this.state.category}</Text>
                     <ListView
                         dataSource={ds.cloneWithRows(this.state.articles.articles)}
-                        renderRow={(row, j, i) => <ArticleRow article={row} index={parseInt(i, 10)} />}
+                        renderRow={(row, j, i) => <ArticleRowStd article={row} index={parseInt(i, 10)} />}
                     />
                 </View>
 
