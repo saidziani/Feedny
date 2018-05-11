@@ -9,6 +9,7 @@ import axios from 'axios'
 import ArticleRow from './Row'
 import ArticleRowStd from './RowStd'
 
+
 export default class Home extends React.Component{
 
     static navigationOptions = (navigationProps) => {
@@ -249,7 +250,7 @@ export default class Home extends React.Component{
             )
         } else {
             return (
-                <ActivityIndicator color={style.red} size="large"/>
+                <ActivityIndicator style={style.centerAll} color={style.red} size="large"/>
             )
         }
     }
