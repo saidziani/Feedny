@@ -14,9 +14,11 @@ export default class ArticleRow extends React.Component{
         article: PropTypes.object.isRequired
     }
 
+
     showArticle (article) {
-        //this.props.navigation.navigate('Onearticle', {article: article})
         console.log(article)
+        //this.props.navigation.navigate('Onearticle', {article: article})
+
     }
 
     render (){
