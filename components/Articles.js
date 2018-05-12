@@ -15,7 +15,7 @@ import style from '../assets/style/Style'
 
 import ArticleRow from './Row'
 
-import ArticleRowStd from './RowStd'
+import Rowstd from './Rowstd'
 
 const propTypes = {
     navigation: PropTypes.shape({
@@ -71,7 +71,7 @@ export default class Articles extends React.Component {
                 <View>
                     <ListView
                         dataSource={ds.cloneWithRows(this.state.articles.articles)}
-                        renderRow={(row, j, i) => <ArticleRowStd article={row} index={parseInt(i, 10)} />}
+                        renderRow={(row, j, i) => <Rowstd article={row} index={parseInt(i, 10)} />}
                     />
                 </View>
 

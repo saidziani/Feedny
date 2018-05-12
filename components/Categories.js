@@ -115,7 +115,7 @@ export default class Categories extends React.Component{
                         key="bookmark-border"
                         icon="bookmark-border"
                         label={null}
-                        onPress={() => this.moveMenuBottom('Categories')}
+                        onPress={() => this.moveMenuBottom('Preferences')}
                     />
                     <BottomNavigation.Action
                         key="settings"
