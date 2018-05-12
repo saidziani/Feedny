@@ -29,7 +29,7 @@ export default {
         marginTop: 30
     },
     imgC:{
-        maxWidth: 150,
+        maxWidth: 165,
         maxHeight: 150
     },
     imgR:{
@@ -236,5 +236,45 @@ export default {
     stdIconThree:{
         position:'absolute',marginTop:20,marginLeft:310,opacity:0.7
     },
-
+    /*One article*/
+    detailsHr:{
+        marginTop: 5,
+        width: 100,
+        borderBottomWidth: 2,
+        borderBottomColor: black,
+    },
+    detailsView:{
+        margin:20,
+        marginTop:30,
+        flex: 1,
+        alignItems: 'center',
+    },
+    detailsSource:{
+        fontSize:15,
+        marginTop:5,
+    },
+    detailsAuthor:{
+        fontSize:13,
+    },
+    detailsTitle:{
+        fontSize:21,
+        margin:35,
+        marginBottom:15
+    },
+    detailsSummary:{
+        fontSize:18,
+        marginTop:30
+    },
+    detailsImgS:{
+        width:45,
+        height:45,
+    },
+    detailsParagraphe:{
+        fontSize:17,
+        marginBottom:15
+    },
+    mainArticleImg:{
+        marginTop:20,
+        height:190,
+    }
 }
