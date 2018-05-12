@@ -38,8 +38,8 @@ export default class Home extends React.Component{
     }
 
     fetchArticles() {
-        axios.get(`http://192.168.1.234:5000/api/articles/category=news`).then((response) => {{
-            this.setState({articles: response.data})/*, console.log(response.data)*/}
+        axios.get(`http://192.168.43.121:5000/api/articles/category=news`).then((response) => {{
+            this.setState({articles: response.data}), console.log(response.data)}
         }).catch((error)=>{console.log(error)})
     }
 
@@ -215,7 +215,7 @@ export default class Home extends React.Component{
                                 </View>
                                 <ListView
                                     dataSource={ds.cloneWithRows(this.state.articles.articles)}
-                                    renderRow={(row, j, i) => <Rowstd article={row} index={parseInt(i, 10)} />}
+                                    renderRow={(row, j, i) => <Rowstd navigation={this.props.navigation} article={row} index={parseInt(i, 10)} />}
                                 />
                             </View>
                         </ScrollView>

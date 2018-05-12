@@ -11,20 +11,20 @@ export default class ArticleRow extends React.Component{
 
 
     static propTypes = {
-        article: PropTypes.object.isRequired
+        article: PropTypes.object.isRequired,
+        navigation:PropTypes.object.isRequired
     }
 
 
     showArticle (article) {
-        console.log(article)
-        //this.props.navigation.navigate('Onearticle', {article: article})
-
+        //console.log(article)
+        this.props.navigation.navigate('Onearticle', {article: article})
     }
 
     render (){
         return(
             <View style={style.articleStd}>
-                <TouchableOpacity onPress={() => this.showArticle(this.props.article)}>
+                <TouchableOpacity onPress={() => this.showArticle(this.props)}>
                     <View style={style.viewStd}>
                         <Text style={style.articleStdTitle}>
                             {this.props.article.title}
