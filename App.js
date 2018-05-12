@@ -9,10 +9,12 @@ import Login from './components/Login'
 import Main from './components/Main'
 import Articles from './components/Articles'
 import Personalize from './components/Personalize'
-
+import Preferences from './components/Preferences'
+import Onearticle from './components/Onearticle'
+import Rowstd from './components/Rowstd'
+import Categories from "./components/Categories"
 
 import { YellowBox } from 'react-native';
-import Categories from "./components/Categories";
 YellowBox.ignoreWarnings([
     'Warning: componentWillMount is deprecated',
     'Warning: componentWillReceiveProps is deprecated',
@@ -27,6 +29,9 @@ const RootStack = StackNavigator(
         Categories: {screen: Categories,},
         Articles: { screen: Articles,},
         Personalize: { screen: Personalize,},
+        Preferences: { screen: Preferences,},
+        Onearticle: { screen: Onearticle,},
+        Rowstd: { screen: Rowstd,},
     },
     {
         initialRouteName: 'Home',
