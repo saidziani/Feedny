@@ -17,28 +17,14 @@ import ArticleRow from './Row'
 
 import Rowstd from './Rowstd'
 
-const propTypes = {
-    navigation: PropTypes.shape({
-        goBack: PropTypes.func.isRequired,
-    }).isRequired,
-};
 
 export default class Articles extends React.Component {
 
-    static navigationOptions = (navigationProps) => {
+
+    static navigationOptions = ({navigation}) => {
         return {
-            header: (props) => (
-                <Toolbar
-                    style={{backgroundColor: style.pink}}
-                    leftElement="menu"
-                    centerElement="Category Name"
-                    searchable={{
-                        autoFocus: true,
-                        placeholder: 'Search',
-                    }}
-                />
-            ),
-        };
+            title: `${navigation.state.params.category}`.toUpperCase(),
+        }
     }
 
     constructor(props) {
@@ -53,7 +39,7 @@ export default class Articles extends React.Component {
     }
 
     fetchArticles() {
-        axios.get(`http://192.168.43.121:5000/api/articles/category=`+this.state.category).then((response) => {
+        axios.get(`http://192.168.1.234:5000/api/articles/category=`+this.state.category).then((response) => {
             this.setState({articles: response.data})
         }).catch((error)=>{console.log(error)})
     }
