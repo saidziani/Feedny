@@ -31,12 +31,12 @@ export default class ArticleRow extends React.Component{
                         {this.props.article.summary}
                     </Text>
                     <View>
-                        <Image style={style.imgS} source={require('../assets/img/articles/1.jpg')} />
+                        <Image style={style.imgS} source={{uri : this.state.article.urlToImage}} />
                         <Text style={style.sourceName}>
                             {this.props.article.source}
                         </Text>
                         <Text style={style.sourceTime}>
-                            {this.props.article.time}
+                            {this.props.article.publishedAt}
                         </Text>
                         <Icon style={style.interactionIconOne} name="bookmark-border" />
                         <Icon style={style.interactionIconTwo} name="settings" />
@@ -44,7 +44,7 @@ export default class ArticleRow extends React.Component{
                     </View>
                 </Col>
                 <Col size={1} style={style.columnSmall}>
-                    <Image style={style.imgV} source={require('../assets/img/articles/1.jpg')} />
+                    <Image style={style.imgV} source={{uri : this.state.article.urlToImage}} />
                 </Col>
             </Row>
 

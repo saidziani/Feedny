@@ -13,7 +13,7 @@ export default class RowArticle extends React.Component{
     }
 
     img(){
-        let image = this.props.article.sourceImage
+        let image = this.props.article.urlToImage
         return(
             image
         )

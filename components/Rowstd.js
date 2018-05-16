@@ -17,7 +17,6 @@ export default class ArticleRow extends React.Component{
 
 
     showArticle (article) {
-        //console.log(article)
         this.props.navigation.navigate('Onearticle', {article: article})
     }
 
@@ -31,20 +30,19 @@ export default class ArticleRow extends React.Component{
                         </Text>
 
                         <Text style={style.articleSummary}>
-                            uygjkb gbliu ,fglhrt n rtn eoge goeng eoghe nghengio nrg eogne gehrngmo ernge gn eghn ego heng eoghi neg eiohge nge ...
+                            {this.props.article.summary}
                         </Text>
                     </View>
                     <View>
-                        <Image style={style.stdImgS} source={require('../assets/img/articles/1.jpg')} />
+                        <Image style={style.stdImgS} source={{uri : this.props.article.urlToImage}} />
                         <Text style={style.stdSourceName}>
                             {this.props.article.source}
                         </Text>
                         <Text style={style.stdSourceTime}>
-                            {this.props.article.time}
+                            {this.props.article.publishedAt}
                         </Text>
-                        <Icon style={style.stdIconOne} name="bookmark-border" />
-                        <Icon style={style.stdIconTwo} name="settings" />
-                        <Icon style={style.stdIconThree} name="today" />
+                        <Icon style={style.stdIconTwo} name="bookmark-border" />
+                        <Icon style={style.stdIconThree} name="thumb-down" />
                     </View>
                 </TouchableOpacity>
             </View>
