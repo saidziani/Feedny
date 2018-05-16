@@ -1,5 +1,5 @@
 import React from 'react'
-import {StyleSheet, Text, View, ScrollView, Image, ImageBackground, ListView, ActivityIndicator} from 'react-native';
+import {StyleSheet, Text, View, ScrollView, Image, ImageBackground, TouchableOpacity, ListView, ActivityIndicator} from 'react-native';
 import { Toolbar, Button, BottomNavigation, Icon } from 'react-native-material-ui';
 import { Col, Row, Grid } from "react-native-easy-grid";
 import Container from './Container';
@@ -8,6 +8,7 @@ import style from '../assets/style/Style'
 import axios from 'axios'
 import ArticleRow from './Row'
 import Rowstd from './Rowstd'
+import Toprow from './Toprow'
 
 
 export default class Home extends React.Component{
@@ -32,15 +33,33 @@ export default class Home extends React.Component{
 
         this.state = {
             active: 'Home',
-            articles: null
+            articles: null,
+            weather: null
         }
-        this.fetchArticles()
+        this.fetchArticles(),
+        console.log(this.state.articles)
+        // this.fetchTopFive()
+        //this.fetchWeather(),
+        //console.log(this.state.weather)
+
     }
 
     fetchArticles() {
-        axios.get(`http://192.168.43.121:5000/api/articles/category=news`).then((response) => {{
-            this.setState({articles: response.data}), console.log(response.data)}
-        }).catch((error)=>{console.log(error)})
+        axios.get(`http://192.168.1.234:5000/api/articles/category=entertainment`).then((response) => {{
+            this.setState({articles: response.data})}
+        }).catch((error)=>{console.log(error)})            
+    }
+
+    fetchTopFive() {
+        axios.get(`http://192.168.1.234:5000/api/articles/category=entertainment`).then((response) => {{
+            this.setState({articles: response.data})}
+        }).catch((error)=>{console.log(error)}) 
+    }
+
+    fetchWeather(){
+        axios.get(`http://api.openweathermap.org/data/2.5/forecast?q=algiers&mode=json&cnt=20&units=metric&appid=89663512909716c62367d9089f12de93`).then((response) => {
+                this.setState({weather: response.data})
+            })
     }
 
 
@@ -77,140 +96,20 @@ export default class Home extends React.Component{
                                         <Text style={style.topFiveLittleMsg}>Top 5 articles for you</Text>
                                         <View style={style.topFiveHr}></View>
                                     </View>
-
                                 </View>
-
-                                <Row style={style.articleShow}>
-                                    <Col size={2} style={style.columnBig}>
-                                        <Text style={style.articleTitle}>
-                                            Let's make America Great Again with Donald Trump
-                                        </Text>
-                                        <Text style={style.articleSummary}>
-                                            Organized for the first time in algeria and trip tu Istanbul...
-                                        </Text>
-                                        <View>
-                                            <Image style={style.imgS} source={require('../assets/img/articles/1.jpg')}/>
-                                            <Text style={style.sourceName}>
-                                                France 24
-                                            </Text>
-                                            <Text style={style.sourceTime}>
-                                                Il y a 5 heures
-                                            </Text>
-                                            <Icon style={style.interactionIconOne} name="bookmark-border"/>
-                                            <Icon style={style.interactionIconTwo} name="settings"/>
-                                            <Icon style={style.interactionIconThree} name="today"/>
-                                        </View>
-                                    </Col>
-                                    <Col size={1} style={style.columnSmall}>
-                                        <Image style={style.imgV} source={require('../assets/img/articles/2.jpg')}/>
-                                    </Col>
-                                </Row>
-                                <Row style={style.articleShow}>
-                                    <Col size={2} style={style.columnBig}>
-                                        <Text style={style.articleTitle}>
-                                            Let's make America Great Again with Donald Trump
-                                        </Text>
-                                        <Text style={style.articleSummary}>
-                                            Organized for the first time in algeria and trip tu Istanbul...
-                                        </Text>
-                                        <View>
-                                            <Image style={style.imgS} source={require('../assets/img/articles/2.jpg')}/>
-                                            <Text style={style.sourceName}>
-                                                France 24
-                                            </Text>
-                                            <Text style={style.sourceTime}>
-                                                Il y a 5 heures
-                                            </Text>
-                                            <Icon style={style.interactionIconOne} name="bookmark-border"/>
-                                            <Icon style={style.interactionIconTwo} name="settings"/>
-                                            <Icon style={style.interactionIconThree} name="today"/>
-                                        </View>
-                                    </Col>
-                                    <Col size={1} style={style.columnSmall}>
-                                        <Image style={style.imgV} source={require('../assets/img/articles/3.jpg')}/>
-                                    </Col>
-                                </Row>
-                                <Row style={style.articleShow}>
-                                    <Col size={2} style={style.columnBig}>
-                                        <Text style={style.articleTitle}>
-                                            Let's make America Great Again with Donald Trump
-                                        </Text>
-                                        <Text style={style.articleSummary}>
-                                            Organized for the first time in algeria and trip tu Istanbul...
-                                        </Text>
-                                        <View>
-                                            <Image style={style.imgS} source={require('../assets/img/articles/2.jpg')}/>
-                                            <Text style={style.sourceName}>
-                                                France 24
-                                            </Text>
-                                            <Text style={style.sourceTime}>
-                                                Il y a 5 heures
-                                            </Text>
-                                            <Icon style={style.interactionIconOne} name="bookmark-border"/>
-                                            <Icon style={style.interactionIconTwo} name="settings"/>
-                                            <Icon style={style.interactionIconThree} name="today"/>
-                                        </View>
-                                    </Col>
-                                    <Col size={1} style={style.columnSmall}>
-                                        <Image style={style.imgV} source={require('../assets/img/articles/1.jpg')}/>
-                                    </Col>
-                                </Row>
-                                <Row style={style.articleShow}>
-                                    <Col size={2} style={style.columnBig}>
-                                        <Text style={style.articleTitle}>
-                                            Let's make America Great Again with Donald Trump
-                                        </Text>
-                                        <Text style={style.articleSummary}>
-                                            Organized for the first time in algeria and trip tu Istanbul...
-                                        </Text>
-                                        <View>
-                                            <Image style={style.imgS} source={require('../assets/img/articles/1.jpg')}/>
-                                            <Text style={style.sourceName}>
-                                                France 24
-                                            </Text>
-                                            <Text style={style.sourceTime}>
-                                                Il y a 5 heures
-                                            </Text>
-                                            <Icon style={style.interactionIconOne} name="bookmark-border"/>
-                                            <Icon style={style.interactionIconTwo} name="settings"/>
-                                            <Icon style={style.interactionIconThree} name="today"/>
-                                        </View>
-                                    </Col>
-                                    <Col size={1} style={style.columnSmall}>
-                                        <Image style={style.imgV} source={require('../assets/img/articles/2.jpg')}/>
-                                    </Col>
-                                </Row>
-                                <Row style={style.articleShow}>
-                                    <Col size={2} style={style.columnBig}>
-                                        <Text style={style.articleTitle}>
-                                            Let's make America Great Again with Donald Trump
-                                        </Text>
-                                        <Text style={style.articleSummary}>
-                                            Organized for the first time in algeria and trip tu Istanbul...
-                                        </Text>
-                                        <View>
-                                            <Image style={style.imgS} source={require('../assets/img/articles/2.jpg')}/>
-                                            <Text style={style.sourceName}>
-                                                France 24
-                                            </Text>
-                                            <Text style={style.sourceTime}>
-                                                Il y a 5 heures
-                                            </Text>
-                                            <Icon style={style.interactionIconOne} name="bookmark-border"/>
-                                            <Icon style={style.interactionIconTwo} name="settings"/>
-                                            <Icon style={style.interactionIconThree} name="today"/>
-                                        </View>
-                                    </Col>
-                                    <Col size={1} style={style.columnSmall}>
-                                        <Image style={style.imgV} source={require('../assets/img/articles/3.jpg')}/>
-                                    </Col>
-                                </Row>
+                                
+                                <Toprow index={1} article={this.state.articles.articles[0]} navigation={this.props.navigation} />
+                                <Toprow index={2} article={this.state.articles.articles[1]} navigation={this.props.navigation} />
+                                <Toprow index={3} article={this.state.articles.articles[2]} navigation={this.props.navigation} />
+                                <Toprow index={4} article={this.state.articles.articles[3]} navigation={this.props.navigation} />
+                                <Toprow index={5} article={this.state.articles.articles[4]} navigation={this.props.navigation} /> 
+                                <Row></Row>
 
                             </Grid>
                             <View>
                                 <View style={style.selection}>
-                                    <Text style={style.selectionMsg}>Selection of the day</Text>
-                                    <Text style={style.selectionLittleMsg}>Top 5 articles for you</Text>
+                                    <Text style={style.selectionMsg}>Recommandations</Text>
+                                    <Text style={style.selectionLittleMsg}>Top articles for you</Text>
                                     <View style={style.selectionHr}></View>
                                 </View>
                                 <ListView
@@ -221,21 +120,21 @@ export default class Home extends React.Component{
                         </ScrollView>
                         <BottomNavigation active={this.state.active}>
                             <BottomNavigation.Action
-                                key="today"
-                                icon="today"
-                                label="Today"
+                                key="bookmark"
+                                icon="bookmark"
+                                label="For you"
                                 onPress={() => this.moveMenuBottom('Home')}
                             />
                             <BottomNavigation.Action
-                                key="people"
-                                icon="people"
-                                label="People"
+                                key="categories"
+                                icon="view-list"
+                                label="Categories"
                                 onPress={() => this.moveMenuBottom('Categories')}
                             />
                             <BottomNavigation.Action
-                                key="bookmark-border"
-                                icon="bookmark-border"
-                                label={null}
+                                key="preferences"
+                                icon="favorite"
+                                label="favorites"
                                 onPress={() => this.moveMenuBottom('Preferences')}
                             />
                             <BottomNavigation.Action

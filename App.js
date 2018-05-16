@@ -13,6 +13,9 @@ import Preferences from './components/Preferences'
 import Onearticle from './components/Onearticle'
 import Rowstd from './components/Rowstd'
 import Categories from "./components/Categories"
+import Toprow from './components/Toprow'
+import { Font } from 'expo';
+
 
 import { YellowBox } from 'react-native';
 YellowBox.ignoreWarnings([

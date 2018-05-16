@@ -30,12 +30,7 @@ export default class Preferences extends React.Component {
             header: (props) => (
                 <Toolbar
                     style={{backgroundColor: style.pink}}
-                    leftElement="menu"
                     centerElement="Preferences"
-                    searchable={{
-                        autoFocus: true,
-                        placeholder: 'Search',
-                    }}
                 />
             ),
         };
@@ -96,31 +91,31 @@ export default class Preferences extends React.Component {
                         </Grid>
                     </ScrollView>
                     <BottomNavigation active={this.state.active}>
-                        <BottomNavigation.Action
-                            key="today"
-                            icon="today"
-                            label="Today"
-                            onPress={() => this.moveMenuBottom('Home')}
-                        />
-                        <BottomNavigation.Action
-                            key="people"
-                            icon="people"
-                            label="People"
-                            onPress={() => this.moveMenuBottom('Categories')}
-                        />
-                        <BottomNavigation.Action
-                            key="bookmark-border"
-                            icon="bookmark-border"
-                            label={null}
-                            onPress={() => this.moveMenuBottom('Preferences')}
-                        />
-                        <BottomNavigation.Action
-                            key="settings"
-                            icon="settings"
-                            label="Settings"
-                            onPress={() => this.moveMenuBottom('Categories')}
-                        />
-                    </BottomNavigation>
+                            <BottomNavigation.Action
+                                key="bookmark"
+                                icon="bookmark"
+                                label="For you"
+                                onPress={() => this.moveMenuBottom('Home')}
+                            />
+                            <BottomNavigation.Action
+                                key="categories"
+                                icon="view-list"
+                                label="Categories"
+                                onPress={() => this.moveMenuBottom('Categories')}
+                            />
+                            <BottomNavigation.Action
+                                key="preferences"
+                                icon="favorite"
+                                label="favorites"
+                                onPress={() => this.moveMenuBottom('Preferences')}
+                            />
+                            <BottomNavigation.Action
+                                key="settings"
+                                icon="settings"
+                                label="Settings"
+                                onPress={() => this.moveMenuBottom('Categories')}
+                            />
+                        </BottomNavigation>
                 </Container>
 
             )
