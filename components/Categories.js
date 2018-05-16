@@ -24,12 +24,7 @@ export default class Categories extends React.Component{
             header: (props) => (
                 <Toolbar
                     style={{backgroundColor: style.pink}}
-                    leftElement="menu"
                     centerElement="Categories"
-                    searchable={{
-                        autoFocus: true,
-                        placeholder: 'Search',
-                    }}
                 />
             ),
         };
@@ -44,7 +39,6 @@ export default class Categories extends React.Component{
     }
 
     details (category) {
-        //this.setState({category: category})
         this.props.navigation.navigate('Articles', {category: category})
     }
 
@@ -60,9 +54,9 @@ export default class Categories extends React.Component{
                     <Grid style={{marginTop: 5, marginBottom: 5}}>
                         <Row style={style.row}>
                             <View style={{backgroundColor: style.white}, style.centerAll}>
-                                <TouchableOpacity onPress={() => this.details("news")}>
+                                <TouchableOpacity onPress={() => this.details("us")}>
                                     <Text style={style.category}>News</Text>
-                                    <Image style={style.imgR} source={require('../assets/img/articles/1.jpg')} />
+                                    <Image style={style.imgR} source={require('../assets/img/categories/news.png')} />
                                 </TouchableOpacity>
                             </View>
                         </Row>
@@ -71,50 +65,65 @@ export default class Categories extends React.Component{
                             <View style={{backgroundColor: style.white}, style.centerAll}>
                                 <TouchableOpacity onPress={() => this.details("sport")}>
                                     <Text style={style.category}>Sport</Text>
-                                    <Image style={style.imgR} source={require('../assets/img/articles/2.jpg')} />
+                                    <Image style={style.imgR} source={require('../assets/img/categories/sport.png')} />
                                 </TouchableOpacity>
                             </View>
                         </Row>
 
                         <Row style={style.row}>
                             <View style={{backgroundColor: style.white}, style.centerAll}>
-                                <Text style={style.category}>Culture</Text>
-                                <Image style={style.imgR} source={require('../assets/img/articles/3.jpg')} />
+                                <TouchableOpacity onPress={() => this.details("entertainment")}>
+                                    <Text style={style.category}>Culture</Text>
+                                    <Image style={style.imgR} source={require('../assets/img/categories/culture.png')} />
+                                </TouchableOpacity>
                             </View>
                         </Row>
 
                         <Row style={style.row}>
                             <View style={{backgroundColor: style.white}, style.centerAll}>
-                                <Text style={style.category}>Religion</Text>
-                                <Image style={style.imgR} source={require('../assets/img/articles/1.jpg')} />
+                                <TouchableOpacity onPress={() => this.details("us")}>
+                                    <Text style={style.category}>Religion</Text>
+                                    <Image style={style.imgR} source={require('../assets/img/categories/religion.png')} />
+                                </TouchableOpacity>
                             </View>
                         </Row>
 
                         <Row style={style.row}>
                             <View style={{backgroundColor: style.white}, style.centerAll}>
-                                <Text style={style.category}>Technology</Text>
-                                <Image style={style.imgR} source={require('../assets/img/articles/2.jpg')} />
+                                <TouchableOpacity onPress={() => this.details("news")}>
+                                    <Text style={style.category}>Economy</Text>
+                                    <Image style={style.imgR} source={require('../assets/img/categories/economy.png')} />
+                                </TouchableOpacity>
+                            </View>
+                        </Row>
+
+                        <Row style={style.row}>
+                            <View style={{backgroundColor: style.white}, style.centerAll}>
+                                <TouchableOpacity onPress={() => this.details("news")}>
+                                    <Text style={style.category}>Health</Text>
+                                    <Image style={style.imgR} source={require('../assets/img/categories/health.png')} />
+                                </TouchableOpacity>
                             </View>
                         </Row>
                     </Grid>
                 </ScrollView>
                 <BottomNavigation active={this.state.active}>
                     <BottomNavigation.Action
-                        key="today"
-                        icon="today"
-                        label="Today"
+                        key="bookmark"
+                        icon="bookmark"
+                        label="For you"
                         onPress={() => this.moveMenuBottom('Home')}
                     />
                     <BottomNavigation.Action
-                        key="people"
-                        icon="people"
-                        label="People"
+                        key="categories"
+                        icon="view-list"
+                        label="Categories"
                         onPress={() => this.moveMenuBottom('Categories')}
                     />
                     <BottomNavigation.Action
-                        key="bookmark-border"
-                        icon="bookmark-border"
-                        label={null}
+                        key="preferences"
+                        icon="favorite"
+                        label="favorites"
                         onPress={() => this.moveMenuBottom('Preferences')}
                     />
                     <BottomNavigation.Action
