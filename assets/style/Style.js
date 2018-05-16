@@ -29,20 +29,20 @@ export default {
         marginTop: 30
     },
     imgC:{
-        maxWidth: 165,
-        maxHeight: 150
+        width: 165,
+        height: 150
     },
     imgR:{
-        maxWidth: 360,
-        maxHeight: 180,
+        width: 360,
+        height: 180,
     },
     imgV:{
-        maxWidth: 100,
-        maxHeight: 100,
+        width: 100,
+        height: 100,
     },
     imgS:{
-        maxWidth: 23,
-        maxHeight: 23,
+        width: 23,
+        height: 23,
         marginTop:20,
     },
 
@@ -56,8 +56,8 @@ export default {
 
     /*Images*/
     logo:{
-        maxWidth: 150,
-        maxHeight: 70
+        width: 150,
+        height: 70
     },
 
     row:{
@@ -106,7 +106,8 @@ export default {
         backgroundColor: '#fff',
         padding: 14,
         borderRadius: 3,
-        marginBottom:1,
+        borderBottomWidth: 1,
+        borderBottomColor: gray,
     },
     articleTitle:{
         fontSize:18,
@@ -216,8 +217,8 @@ export default {
         padding: 15,
     },
     stdImgS:{
-        maxWidth: 23,
-        maxHeight: 23,
+        width: 23,
+        height: 23,
         marginTop:20,
         marginLeft: 15,
     },
@@ -259,7 +260,7 @@ export default {
     detailsTitle:{
         fontSize:21,
         margin:35,
-        marginBottom:15
+        marginBottom:15,
     },
     detailsSummary:{
         fontSize:18,
@@ -275,6 +276,6 @@ export default {
     },
     mainArticleImg:{
         marginTop:20,
-        height:190,
+        height:180,
     }
 }
