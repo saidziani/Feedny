@@ -52,6 +52,10 @@ export default {
         alignItems: 'center',
         justifyContent: 'center'
     },
+    centerHorizontal: {
+        flex: 1,
+        //alignItems: 'center',
+    },
 
 
     /*Images*/
