@@ -1,8 +1,11 @@
 import React from 'react'
-import { Image, Text, View, StatusBar } from 'react-native';
+import { Image, Text, View, StatusBar, TouchableOpacity } from 'react-native';
 import style from '../assets/style/Style'
-import { Toolbar, Button } from 'react-native-material-ui';
 import { TextField } from 'react-native-material-textfield';
+import { Toolbar, Button, BottomNavigation, Icon } from 'react-native-material-ui';
+import { Col, Row, Grid } from "react-native-easy-grid";
+import Container from './Container';
+
 
 export default class Welcome extends React.Component{
 
@@ -11,26 +14,45 @@ export default class Welcome extends React.Component{
            header: (props) => (
                 <Toolbar
                     leftElement="arrow-back"
-                    centerElement="Log In"
+                    centerElement="Signin"
                 />
             ),
         };
     }
+
+    constructor (props){
+        super(props)
+        this.state = {
+            username: '',
+            password: ''
+        }
+    }
+
+    submit(){
+        this.props.navigation.navigate('List', {username: this.state.username, password: this.state.username})
+    }
+
     render(){
         return(
-            <View style={style.container}>
-                <Image style={style.logo} source={require('../assets/img/logo.png')}  />
-                <Text style={style.title}>
-                    Welcome to{'\n'}
-                    News.
-                </Text>
-                <Button icon="done" raised primary text="Continue with Facebook" />
-                <Button icon="done" raised primary text="Create account" />
-                <Text>
-                    By tapping Continue, Create account, I agree to News's Terms of Service.{'\n'}
-                    Privacy Policy...and shit
-                </Text>
-            </View>
+            <Container>
+                <Grid style={{margin: 20}}>
+                    <View style={style.centerHorizontal}>
+                        <View style={{alignItems: 'center',marginBottom: 50, marginTop: 30}}>
+                            <Image style={style.logo} source={require('../assets/img/logo.png')}  />
+                            <Text style={style.title}>
+                                Welcome to News.
+                            </Text>
+                        </View>
+                        <TextField label='Username' />
+                        <TextField secureTextEntry={true} label='Password' />
+                        <View style={{marginBottom: 40}}></View>
+                        <Button icon="done" raised primary text="Login" onPress={() => this.submit()} />
+                        <TouchableOpacity style={{alignItems: 'center',marginTop:10 }}>
+                            <Text style={{fontSize:16}}>Don't have an account?</Text>
+                        </TouchableOpacity>
+                    </View>
+                </Grid>
+            </Container>
         )
     }
 

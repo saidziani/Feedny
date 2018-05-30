@@ -19,13 +19,23 @@ export default class Home extends React.Component{
                 <Toolbar
                     leftElement="menu"
                     centerElement="Welcome"
-                    searchable={{
-                        autoFocus: true,
-                        placeholder: 'Search on the app',
-                    }}
+                    // searchable={{
+                    //     autoFocus: true,
+                    //     placeholder: 'Search on the app',
+                    // }}
+                    // rightElement={<Icon
+                    //                 name="notifications-active"
+                    //                 color="#ffffff"
+                    //                 // onPress={this.props.navigation.navigate(Welcome)}
+                    //             />}
+
                 />
             ),
         };
+    }
+
+    openProfile() {
+        this.props.navigation.navigate(Welcome)
     }
 
     constructor(props) {
@@ -36,8 +46,7 @@ export default class Home extends React.Component{
             articles: null,
             weather: null
         }
-        this.fetchArticles(),
-        console.log(this.state.articles)
+        this.fetchArticles()
         // this.fetchTopFive()
         //this.fetchWeather(),
         //console.log(this.state.weather)
@@ -45,13 +54,13 @@ export default class Home extends React.Component{
     }
 
     fetchArticles() {
-        axios.get(`http://192.168.1.234:5000/api/articles/category=entertainment`).then((response) => {{
+        axios.get(`http://192.168.43.207:5000/api/articles/onload/username=said`).then((response) => {{
             this.setState({articles: response.data})}
         }).catch((error)=>{console.log(error)})            
     }
 
     fetchTopFive() {
-        axios.get(`http://192.168.1.234:5000/api/articles/category=entertainment`).then((response) => {{
+        axios.get(`http://192.168.43.207:5000/api/articles/category=entertainment`).then((response) => {{
             this.setState({articles: response.data})}
         }).catch((error)=>{console.log(error)}) 
     }

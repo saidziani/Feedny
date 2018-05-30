@@ -33,7 +33,7 @@ export default class Toprow extends React.Component{
                         {this.props.article.summary}...
                     </Text>
                     <View>
-                        <Image style={style.imgS} source={{uri:this.props.article.urlToImage}}/>
+                        <Image style={style.imgS} source={{uri:this.props.article.sourceImage}}/>
                         <Text style={style.sourceName}>
                             {this.props.article.source}
                         </Text>

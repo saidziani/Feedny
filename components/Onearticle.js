@@ -30,7 +30,7 @@ export default class Onearticle extends React.Component{
                 <Container>
                     <ScrollView>
                         <View style={style.detailsView}>
-                            <Image style={style.detailsImgS} source={{uri : this.state.article.urlToImage}} />
+                            <Image style={style.detailsImgS} source={{uri : this.state.article.sourceImage}} />
                             <Text style={style.detailsTitle}>{this.state.article.title}</Text>
                             <View style={style.detailsHr}></View>
                             <Text style={style.detailsSource}>{this.state.article.source}</Text>
