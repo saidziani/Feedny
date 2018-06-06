@@ -39,7 +39,7 @@ export default class Articles extends React.Component {
     }
 
     fetchArticles() {
-        axios.get(`http://192.168.43.207:5000/api/articles/category=`+this.state.category).then((response) => {
+        axios.get(`http://172.29.111.80:5000/api/articles/category=`+this.state.category).then((response) => {
             this.setState({articles: response.data})
         }).catch((error)=>{console.log(error)})
     }
