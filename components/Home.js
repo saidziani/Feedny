@@ -17,22 +17,13 @@ export default class Home extends React.Component{
         return {
             header: (props) => (
                 <Toolbar
-                    leftElement="menu"
-                    centerElement="Welcome"
-                    // searchable={{
-                    //     autoFocus: true,
-                    //     placeholder: 'Search on the app',
-                    // }}
-                    // rightElement={<Icon
-                    //                 name="notifications-active"
-                    //                 color="#ffffff"
-                    //                 // onPress={this.props.navigation.navigate(Welcome)}
-                    //             />}
-
+                    centerElement="Feedny"
+                    style={{titleText: style.titleToolbar}}
                 />
             ),
         };
     }
+
 
     openProfile() {
         this.props.navigation.navigate(Welcome)
@@ -54,13 +45,13 @@ export default class Home extends React.Component{
     }
 
     fetchArticles() {
-        axios.get(`http://172.29.111.80:5000/api/articles/onload/username=said`).then((response) => {{
+        axios.get(`http://192.168.1.234:5000/api/articles/onload/username=said`).then((response) => {{
             this.setState({articles: response.data})}
         }).catch((error)=>{console.log(error)})            
     }
 
     fetchTopFive() {
-        axios.get(`http://172.29.111.80:5000/api/articles/category=entertainment`).then((response) => {{
+        axios.get(`http://192.168.1.234:5000/api/articles/category=entertainment`).then((response) => {{
             this.setState({articles: response.data})}
         }).catch((error)=>{console.log(error)}) 
     }
@@ -81,49 +72,39 @@ export default class Home extends React.Component{
         if (this.state.articles != null) {
             const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
             return (
-                <ImageBackground source={require('./bg.jpg')} style={style.backgroundImage}>
+                <ImageBackground source={require('./trump.png')} style={style.backgroundImage}>
                     <Container>
                         <ScrollView>
                             <Grid style={{margin: 10}}>
                                 <View style={style.welcomePanel}>
                                     <View style={style.hiYou}>
-                                        <Text style={style.hiMsg}>Hey Saïd!</Text>
-                                        <View style={{
-                                            marginTop: 10,
-                                            flex: 1,
-                                            flexDirection: 'row',
-                                            justifyContent: 'space-between',
-                                            alignItems: 'center'
-                                        }}>
-                                            <Text style={{color: 'white', fontSize: 18}}>Algiers</Text>
-                                            <Icon name={'today'}/>
+                                        <View>
+                                            <Text style={style.hiMsg}>Good morning.</Text>
+                                            <Text style={{color: 'white', fontSize: 18}}>Amle</Text>
+                                        </View>
+                                        <View>
                                             <Text style={{color: 'white', fontSize: 18}}>25^C</Text>
+                                            <Text style={{color: 'white', fontSize: 18}}>Algiers</Text>
                                         </View>
                                     </View>
-                                    <View style={style.topFive}>
-                                        <Text style={style.topFiveMsg}>Selection of the day</Text>
-                                        <Text style={style.topFiveLittleMsg}>Top 5 articles for you</Text>
-                                        <View style={style.topFiveHr}></View>
+                                </View>
+                                <View style={style.mainArticle}>
+                                    <Text style={style.mainArticleTitle}>Trump accuses Mueller's team of medding in midterm elections</Text>
+                                    <View style={style.mainArticleInfo}>
+                                        <Text style={style.mainArticleCategory}>WORLD</Text>
+                                        <Text style={style.mainArticleSource}>ABC News</Text>
+                                        <Text style={style.mainArticleTime}>1 hour ago</Text>
                                     </View>
                                 </View>
                                 
-                                <Toprow index={1} article={this.state.articles.articles[0]} navigation={this.props.navigation} />
-                                <Toprow index={2} article={this.state.articles.articles[1]} navigation={this.props.navigation} />
-                                <Toprow index={3} article={this.state.articles.articles[2]} navigation={this.props.navigation} />
-                                <Toprow index={4} article={this.state.articles.articles[3]} navigation={this.props.navigation} />
-                                <Toprow index={5} article={this.state.articles.articles[4]} navigation={this.props.navigation} /> 
                                 <Row></Row>
+                                
 
                             </Grid>
                             <View>
-                                <View style={style.selection}>
-                                    <Text style={style.selectionMsg}>Recommandations</Text>
-                                    <Text style={style.selectionLittleMsg}>Top articles for you</Text>
-                                    <View style={style.selectionHr}></View>
-                                </View>
                                 <ListView
                                     dataSource={ds.cloneWithRows(this.state.articles.articles)}
-                                    renderRow={(row, j, i) => <Rowstd navigation={this.props.navigation} article={row} index={parseInt(i, 10)} />}
+                                    renderRow={(row, j, i) => <Toprow navigation={this.props.navigation} article={row} index={parseInt(i, 10)} />}
                                 />
                             </View>
                         </ScrollView>
@@ -147,9 +128,9 @@ export default class Home extends React.Component{
                                 onPress={() => this.moveMenuBottom('Preferences')}
                             />
                             <BottomNavigation.Action
-                                key="settings"
+                                key="Profil"
                                 icon="settings"
-                                label="Settings"
+                                label="Profil"
                                 onPress={() => this.moveMenuBottom('Categories')}
                             />
                         </BottomNavigation>

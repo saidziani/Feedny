@@ -37,8 +37,8 @@ export default {
         height: 180,
     },
     imgV:{
-        width: 100,
-        height: 100,
+        width: 110,
+        height: 110,
     },
     imgS:{
         width: 23,
@@ -99,19 +99,17 @@ export default {
     },
 
     /*Article*/
-    articleTitle:{
-        fontSize: 20,
-    },
     articleSummary:{
         fontSize: 15,
     },
     articleShow:{
-        height: 130,
+        height: 140,
         backgroundColor: '#fff',
-        padding: 14,
-        borderRadius: 3,
-        borderBottomWidth: 1,
-        borderBottomColor: gray,
+        padding: 15,
+        flex:1
+        // borderRadius: 3,
+        // borderBottomWidth: 0.15,
+        // borderBottomColor: gray,
     },
     articleTitle:{
         fontSize:18,
@@ -120,11 +118,21 @@ export default {
         fontSize:12,
     },
     sourceName:{
-        fontSize:12, position:'absolute',marginTop:20,marginLeft:30
+        fontSize:12,
     },
+
     sourceTime:{
-        fontSize:10, position:'absolute',marginTop:30,marginLeft:30
+        fontSize:10, 
+        position: 'absolute',
+        bottom: 5,
+        left: 35
     },
+    sourceCategory:{
+        fontSize:12, 
+        position: 'absolute',
+        bottom: 5
+    },
+
     interactionIconOne:{
         position:'absolute',marginTop:20,marginLeft:110,opacity:0.7
     },
@@ -135,26 +143,32 @@ export default {
         position:'absolute',marginTop:20,marginLeft:170,opacity:0.7
     },
     columnBig:{
-        paddingRight: 7
+        paddingRight: 10,
     },
     columnSmall:{
-        paddingLeft: 7, justifyContent: 'center'
+        paddingLeft: 0,
     },
 
     /*Home*/
     welcomePanel:{
-        height: 250
+        height: 70,
+        marginBottom: 180
     },
     hiYou:{
         backgroundColor: 'rgba(0, 0, 0, 0.3)',
-        height: 80,
         borderRadius: 3,
         padding: 15,
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center'
+                                            
     },
     hiMsg:{
         color: white,
         fontSize: 20
     },
+
     topFive: {
         padding: 15,
         marginTop: 65,
@@ -178,8 +192,8 @@ export default {
     backgroundImage: {
         flex: 1,
         width: null,
-        height: null,
-        shadowOffset:{  width: 200,  height: 200,  },
+        height: 270,
+        shadowOffset:{  width: 270,  height: 270,  },
         shadowColor: black,
         shadowOpacity: 1.0,
     },
@@ -281,5 +295,43 @@ export default {
     mainArticleImg:{
         marginTop:20,
         height:180,
+    },
+
+
+    /*****************/
+    mainArticle:{
+        position: 'absolute',
+        bottom: 20,
+        left: 5
+    },
+    mainArticleTitle:{
+        fontSize: 25,
+        fontWeight: '600',
+        color: '#fff',
+        marginBottom: 10
+    },
+    mainArticleInfo:{
+        flex: 1,
+        flexDirection: 'row',
+        // justifyContent: 'space-between',
+        // alignItems: 'center'
+    },
+    mainArticleCategory:{
+        color:"#fff",
+        marginRight: 10,
+    },
+    mainArticleSource:{
+        marginRight: 10,
+        color:"#fff",
+    },
+    mainArticleTime:{
+        marginRight: 10,
+        color:"#fff",
+    },
+
+    /*****************/
+    titleToolbar:{
+        textAlign: 'center',
+        fontSize: 27
     }
 }

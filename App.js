@@ -60,8 +60,8 @@ const uiTheme = {
     },
     toolbar: {
         container: {
-            marginTop: StatusBar.currentHeight,
-            height: 50,
+            paddingTop: StatusBar.currentHeight,
+            height: StatusBar.currentHeight + 50,
         },
     }
 };

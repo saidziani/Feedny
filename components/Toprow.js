@@ -26,23 +26,18 @@ export default class Toprow extends React.Component{
             <TouchableOpacity onPress={() => this.showArticle(this.props)}>
             <Row style={style.articleShow}>
                 <Col size={2} style={style.columnBig}>
+                    <Text style={style.sourceName}>
+                        SPORT
+                    </Text>
                     <Text style={style.articleTitle}>
-                        {this.props.index}. {this.props.article.title}
+                        {this.props.article.title}
                     </Text>
-                    <Text style={style.articleSummary}>
-                        {this.props.article.summary}...
+                    <Text style={style.sourceCategory}>
+                        SPORT
                     </Text>
-                    <View>
-                        <Image style={style.imgS} source={{uri:this.props.article.sourceImage}}/>
-                        <Text style={style.sourceName}>
-                            {this.props.article.source}
-                        </Text>
-                        <Text style={style.sourceTime}>
-                            {this.props.article.publishedAt}
-                        </Text>
-                        <Icon style={style.interactionIconTwo} name="bookmark-border"/>
-                        <Icon style={style.interactionIconThree} name="thumb-down"/>
-                    </View>
+                    <Text style={style.sourceTime}>
+                        1 hour ago
+                    </Text>
                 </Col>
                 <Col size={1} style={style.columnSmall}>
                     <Image style={style.imgV} source={{uri:this.props.article.urlToImage}}/>
