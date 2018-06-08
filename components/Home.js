@@ -45,13 +45,13 @@ export default class Home extends React.Component{
     }
 
     fetchArticles() {
-        axios.get(`http://192.168.1.234:5000/api/articles/onload/username=said`).then((response) => {{
+        axios.get(`http://`+ip+`:5000/api/articles/onload/username=Saïd`).then((response) => {{
             this.setState({articles: response.data})}
         }).catch((error)=>{console.log(error)})            
     }
 
     fetchTopFive() {
-        axios.get(`http://192.168.1.234:5000/api/articles/category=entertainment`).then((response) => {{
+        axios.get(`http://`+ip+`:5000/api/articles/category=entertainment`).then((response) => {{
             this.setState({articles: response.data})}
         }).catch((error)=>{console.log(error)}) 
     }
@@ -145,3 +145,5 @@ export default class Home extends React.Component{
     }
 
 }
+
+const ip = "192.168.1.234"

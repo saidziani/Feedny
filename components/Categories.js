@@ -51,57 +51,66 @@ export default class Categories extends React.Component{
         return(
             <Container>
                 <ScrollView>
-                    <Grid style={{marginTop: 5, marginBottom: 5}}>
-                        <Row style={style.row}>
+                    <Grid>
+                        <Row style={style.rowImg}>
                             <View style={{backgroundColor: style.white}, style.centerAll}>
                                 <TouchableOpacity onPress={() => this.details("us")}>
-                                    <Text style={style.category}>News</Text>
-                                    <Image style={style.imgR} source={require('../assets/img/categories/news.png')} />
+                                    <Text style={style.category}>US</Text>
+                                    <Image style={style.imgR} source={require('../assets/img/categories/us.jpg')} />
                                 </TouchableOpacity>
                             </View>
                         </Row>
 
-                        <Row style={style.row}>
+                        <Row style={style.rowImg}>
                             <View style={{backgroundColor: style.white}, style.centerAll}>
                                 <TouchableOpacity onPress={() => this.details("sport")}>
                                     <Text style={style.category}>Sport</Text>
-                                    <Image style={style.imgR} source={require('../assets/img/categories/sport.png')} />
+                                    <Image style={style.imgR} source={require('../assets/img/categories/sport.jpg')} />
                                 </TouchableOpacity>
                             </View>
                         </Row>
 
-                        <Row style={style.row}>
+                        <Row style={style.rowImg}>
                             <View style={{backgroundColor: style.white}, style.centerAll}>
                                 <TouchableOpacity onPress={() => this.details("entertainment")}>
-                                    <Text style={style.category}>Culture</Text>
-                                    <Image style={style.imgR} source={require('../assets/img/categories/culture.png')} />
+                                    <Text style={style.category}>Entertainment</Text>
+                                    <Image style={style.imgR} source={require('../assets/img/categories/culture.jpg')} />
                                 </TouchableOpacity>
                             </View>
                         </Row>
 
-                        <Row style={style.row}>
-                            <View style={{backgroundColor: style.white}, style.centerAll}>
-                                <TouchableOpacity onPress={() => this.details("us")}>
-                                    <Text style={style.category}>Religion</Text>
-                                    <Image style={style.imgR} source={require('../assets/img/categories/religion.png')} />
-                                </TouchableOpacity>
-                            </View>
-                        </Row>
-
-                        <Row style={style.row}>
-                            <View style={{backgroundColor: style.white}, style.centerAll}>
-                                <TouchableOpacity onPress={() => this.details("news")}>
-                                    <Text style={style.category}>Economy</Text>
-                                    <Image style={style.imgR} source={require('../assets/img/categories/economy.png')} />
-                                </TouchableOpacity>
-                            </View>
-                        </Row>
-
-                        <Row style={style.row}>
+                        <Row style={style.rowImg}>
                             <View style={{backgroundColor: style.white}, style.centerAll}>
                                 <TouchableOpacity onPress={() => this.details("news")}>
                                     <Text style={style.category}>Health</Text>
-                                    <Image style={style.imgR} source={require('../assets/img/categories/health.png')} />
+                                    <Image style={style.imgR} source={require('../assets/img/categories/health.jpg')} />
+                                </TouchableOpacity>
+                            </View>
+                        </Row>
+
+                        <Row style={style.rowImg}>
+                            <View style={{backgroundColor: style.white}, style.centerAll}>
+                                <TouchableOpacity onPress={() => this.details("news")}>
+                                    <Text style={style.category}>World</Text>
+                                    <Image style={style.imgR} source={require('../assets/img/categories/world.jpg')} />
+                                </TouchableOpacity>
+                            </View>
+                        </Row>
+
+                        <Row style={style.rowImg}>
+                            <View style={{backgroundColor: style.white}, style.centerAll}>
+                                <TouchableOpacity onPress={() => this.details("us")}>
+                                    <Text style={style.category}>Religion</Text>
+                                    <Image style={style.imgR} source={require('../assets/img/categories/religion.jpg')} />
+                                </TouchableOpacity>
+                            </View>
+                        </Row>
+
+                        <Row style={style.rowImg}>
+                            <View style={{backgroundColor: style.white}, style.centerAll}>
+                                <TouchableOpacity onPress={() => this.details("news")}>
+                                    <Text style={style.category}>Business</Text>
+                                    <Image style={style.imgR} source={require('../assets/img/categories/business.jpg')} />
                                 </TouchableOpacity>
                             </View>
                         </Row>

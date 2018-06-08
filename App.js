@@ -35,6 +35,7 @@ const RootStack = StackNavigator(
         Preferences: { screen: Preferences,},
         Onearticle: { screen: Onearticle,},
         Rowstd: { screen: Rowstd,},
+
     },
     {
         initialRouteName: 'Home',

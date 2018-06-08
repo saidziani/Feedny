@@ -26,14 +26,12 @@ export default class Toprow extends React.Component{
             <TouchableOpacity onPress={() => this.showArticle(this.props)}>
             <Row style={style.articleShow}>
                 <Col size={2} style={style.columnBig}>
-                    <Text style={style.sourceName}>
-                        SPORT
-                    </Text>
                     <Text style={style.articleTitle}>
                         {this.props.article.title}
                     </Text>
-                    <Text style={style.sourceCategory}>
-                        SPORT
+                    <Text style={{fontSize:12, fontWeight: '900', position: 'absolute',bottom: 5,
+                        color: bgcolors[this.props.article.categoryPredicted]}}>
+                        {this.props.article.categoryPredicted.toUpperCase()}
                     </Text>
                     <Text style={style.sourceTime}>
                         1 hour ago
@@ -50,3 +48,8 @@ export default class Toprow extends React.Component{
          
    }
 }
+
+
+const bgcolors = {"sport":"#fcc000", "us":"#eb2629", "entertainment":"#b46ef5", "business":"#84bcb2", "health":"#3dc86c", "sci_tech":"#d25c89", "world":"#2598b8", };
+
+const imgSourcePath = "../assets/img/sources/mtv-news.png"

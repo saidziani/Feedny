@@ -34,17 +34,13 @@ export default {
     },
     imgR:{
         width: 360,
-        height: 180,
+        height: 135,
     },
     imgV:{
         width: 110,
         height: 110,
     },
-    imgS:{
-        width: 23,
-        height: 23,
-        marginTop:20,
-    },
+    
 
     /*Extra*/
     centerAll: {
@@ -67,6 +63,9 @@ export default {
     row:{
         height: 180,
         margin: 5,
+    },
+    rowImg:{
+        height: 135,
     },
 
     category:{
@@ -130,7 +129,12 @@ export default {
     sourceCategory:{
         fontSize:12, 
         position: 'absolute',
-        bottom: 5
+        bottom: 5,
+        backgroundColor: '#e1d523',
+        borderRadius: 5,
+        padding: 1,
+        paddingLeft: 3,
+        paddingRight: 3,
     },
 
     interactionIconOne:{
