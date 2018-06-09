@@ -34,7 +34,7 @@ export default {
     },
     imgR:{
         width: 360,
-        height: 135,
+        height: 220,
     },
     imgV:{
         width: 110,
@@ -267,10 +267,7 @@ export default {
         borderBottomColor: black,
     },
     detailsView:{
-        margin:20,
-        marginTop:30,
-        flex: 1,
-        alignItems: 'center',
+        margin:15,
     },
     detailsSource:{
         fontSize:15,
@@ -280,13 +277,15 @@ export default {
         fontSize:13,
     },
     detailsTitle:{
-        fontSize:21,
-        margin:35,
-        marginBottom:15,
+        fontSize:25,
+        marginBottom: 20
     },
     detailsSummary:{
         fontSize:18,
         marginTop:30
+    },
+    detailsContent:{
+        margin: 15
     },
     detailsImgS:{
         width:45,
@@ -297,8 +296,14 @@ export default {
         marginBottom:15
     },
     mainArticleImg:{
-        marginTop:20,
-        height:180,
+        height:220,
+    },
+    mainArticleSourceDisplay:{
+        position: 'absolute',
+        bottom: 15,
+        left: 15,
+        fontSize: 20,
+        color: "#fff"
     },
 
 
@@ -337,5 +342,22 @@ export default {
     titleToolbar:{
         textAlign: 'center',
         fontSize: 27
+    },
+
+    /****Sources******/
+    sourcesName:{
+        fontSize:16, 
+        color: '#000', 
+        width: 75, 
+        textAlign: 'center', 
+        marginTop: 10
+    },
+    sourcesCol:{
+        flex:1, 
+        alignItems: 'center'
+    },
+    sourcesImg:{
+        width: 75, 
+        height: 75
     }
 }

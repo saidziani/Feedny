@@ -8,13 +8,19 @@ import Home from './components/Home'
 import Login from './components/Login'
 import Main from './components/Main'
 import Articles from './components/Articles'
+import Sarticles from './components/Sarticles'
 import Personalize from './components/Personalize'
 import Preferences from './components/Preferences'
 import Onearticle from './components/Onearticle'
 import Rowstd from './components/Rowstd'
 import Categories from "./components/Categories"
+import Sources from "./components/Sources"
 import Toprow from './components/Toprow'
+import Profile from './components/Profile'
 import { Font } from 'expo';
+// import { Fonts } from './assets/fonts/Fonts'
+
+
 
 
 import { YellowBox } from 'react-native';
@@ -31,14 +37,16 @@ const RootStack = StackNavigator(
         Main: { screen: Main,},
         Categories: {screen: Categories,},
         Articles: { screen: Articles,},
+        Sarticles: { screen: Sarticles,},
         Personalize: { screen: Personalize,},
         Preferences: { screen: Preferences,},
         Onearticle: { screen: Onearticle,},
         Rowstd: { screen: Rowstd,},
+        Sources: { screen: Sources,},
 
     },
     {
-        initialRouteName: 'Home',
+        initialRouteName: 'Sources',
     }
 );
 

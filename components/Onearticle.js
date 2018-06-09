@@ -12,6 +12,7 @@ export default class Onearticle extends React.Component{
     static navigationOptions = {
         title:"For you",
     }
+    
 
     constructor(props) {
         super(props);
@@ -29,18 +30,16 @@ export default class Onearticle extends React.Component{
             return(
                 <Container>
                     <ScrollView>
-                        <View style={style.detailsView}>
-                            <Image style={style.detailsImgS} source={{uri : this.state.article.sourceImage}} />
-                            <Text style={style.detailsTitle}>{this.state.article.title}</Text>
-                            <View style={style.detailsHr}></View>
-                            <Text style={style.detailsSource}>{this.state.article.source}</Text>
-                            <Text style={style.detailsAuthor}>{this.state.article.author} . {this.state.article.publishedAt}</Text>
-                            <Text style={style.detailsSummary}>{this.state.article.summary}</Text>
-                        </View>
                         <View style={style.mainArticleImg}>
                             <Image style={style.imgR} source={{uri : this.state.article.urlToImage}} />
+                            <Text style={style.mainArticleSourceDisplay}>{this.state.article.source}</Text>
                         </View>
-                        <View style={{margin:20}}>
+
+                        <View style={style.detailsView}>
+                            <Text style={style.detailsTitle}>{this.state.article.title}</Text>
+                            <Text style={style.detailsAuthor}>By {this.state.article.author} {this.state.article.publishedAt}</Text>
+                        </View>
+                        <View style={style.detailsContent}>
                             <Text style={style.detailsParagraphe}>{this.state.article.content}
                             </Text>
                         </View>

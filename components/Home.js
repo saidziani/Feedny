@@ -9,6 +9,8 @@ import axios from 'axios'
 import ArticleRow from './Row'
 import Rowstd from './Rowstd'
 import Toprow from './Toprow'
+// import { Fonts } from '../assets/fonts/Fonts'
+
 
 
 export default class Home extends React.Component{
@@ -80,7 +82,7 @@ export default class Home extends React.Component{
                                     <View style={style.hiYou}>
                                         <View>
                                             <Text style={style.hiMsg}>Good morning.</Text>
-                                            <Text style={{color: 'white', fontSize: 18}}>Amle</Text>
+                                            <Text style={{color: 'white', fontSize: 18}}>Amel</Text>
                                         </View>
                                         <View>
                                             <Text style={{color: 'white', fontSize: 18}}>25^C</Text>
@@ -124,14 +126,14 @@ export default class Home extends React.Component{
                             <BottomNavigation.Action
                                 key="preferences"
                                 icon="favorite"
-                                label="favorites"
-                                onPress={() => this.moveMenuBottom('Preferences')}
+                                label="Sources"
+                                onPress={() => this.moveMenuBottom('Sources')}
                             />
                             <BottomNavigation.Action
                                 key="Profil"
                                 icon="settings"
                                 label="Profil"
-                                onPress={() => this.moveMenuBottom('Categories')}
+                                onPress={() => this.moveMenuBottom('Profile')}
                             />
                         </BottomNavigation>
                     </Container>
@@ -146,4 +148,4 @@ export default class Home extends React.Component{
 
 }
 
-const ip = "192.168.1.234"
+const ip = "172.29.111.80"
