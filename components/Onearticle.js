@@ -9,8 +9,10 @@ import Container from './Container';
 
 export default class Onearticle extends React.Component{
 
-    static navigationOptions = {
-        title:"For you",
+    static navigationOptions = ({navigation}) => {
+        return {
+            title: `${navigation.state.params.article.article.categoryPredicted}`.toUpperCase(),
+        }
     }
     
 

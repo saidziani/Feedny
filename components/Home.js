@@ -148,4 +148,4 @@ export default class Home extends React.Component{
 
 }
 
-const ip = "172.29.111.80"
+const ip = "192.168.1.234"

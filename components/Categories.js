@@ -132,8 +132,8 @@ export default class Categories extends React.Component{
                     <BottomNavigation.Action
                         key="preferences"
                         icon="favorite"
-                        label="favorites"
-                        onPress={() => this.moveMenuBottom('Preferences')}
+                        label="Sources"
+                        onPress={() => this.moveMenuBottom('Sources')}
                     />
                     <BottomNavigation.Action
                         key="settings"

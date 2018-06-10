@@ -23,7 +23,7 @@ export default class Sarticles extends React.Component {
 
     static navigationOptions = ({navigation}) => {
         return {
-            title: `${navigation.state.params.category}`.toUpperCase(),
+            title: `${realSources[navigation.state.params.source]}`
         }
     }
 
@@ -32,8 +32,7 @@ export default class Sarticles extends React.Component {
 
         this.state = {
             active: 'today',
-            // category: this.props.navigation.state.params.category,
-            category: "world",
+            source: this.props.navigation.state.params.source,
             articles: null
         }
         this.fetchArticles()
@@ -41,7 +40,7 @@ export default class Sarticles extends React.Component {
 
     fetchArticles() {
         // axios.get(`http://`+ip+`:5000/api/articles/category=`+this.state.category).then((response) => {
-        axios.get(`http://172.29.111.80:5000/api/articles/category=world`).then((response) => {
+        axios.get(`http://192.168.1.234:5000/api/articles/category=world`).then((response) => {
             this.setState({articles: response.data})
         }).catch((error)=>{console.log(error)})
     }
@@ -88,4 +87,22 @@ export default class Sarticles extends React.Component {
             )
         }
     }
+}
+
+const realSources = {
+    "the-new-york-times":"The New York Times",
+    "new-scientist":"New Scientist",
+    "bbc-news":"BBC News",
+    "bbc-sport":"BBC Sport",
+    "techcrunch":"Tech Crunch",
+    "techradar":"Tech Radar",
+    "the-economist":"The Economist",
+    "medical-news-today":"Medical News Today",
+    "cnn":"CNN",
+    "al-jazeera":"Al Jazeera",
+    "mtv-news":"MTV News",
+    "business-insider":"Business Insider",
+    "the-wall-street-journal":"The Wall Street Journal",
+    "espn":"ESPN",
+    "entertainment-weekly":"Entertainment Weekly"
 }

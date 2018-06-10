@@ -43,10 +43,11 @@ const RootStack = StackNavigator(
         Onearticle: { screen: Onearticle,},
         Rowstd: { screen: Rowstd,},
         Sources: { screen: Sources,},
+        Profile: { screen: Profile,},
 
     },
     {
-        initialRouteName: 'Sources',
+        initialRouteName: 'Home',
     }
 );
 

@@ -54,74 +54,100 @@ export default class Sources extends React.Component{
                     <Grid style={{margin:10}}>
                         <Row style={{marginBottom: 20, marginTop: 20}}>
                             <Col style={style.sourcesCol} size={1}>
-                            <TouchableOpacity onPress={() => this.details("the-new-york-times")}>
+                                <TouchableOpacity onPress={() => this.details("the-new-york-times")}>
                                 <Image style={style.sourcesImg} source={require('../assets/img/sources-carre/the-new-york-times.png')} />
                                 <Text style={style.sourcesName}>The New York Times</Text>
-                            </TouchableOpacity>
+                                </TouchableOpacity>
                             </Col>
                             <Col style={style.sourcesCol} size={1}>
-                            <TouchableOpacity onPress={() => this.details("the-new-york-times")}>
+                                <TouchableOpacity onPress={() => this.details("new-scientist")}>
                                 <Image style={style.sourcesImg} source={require('../assets/img/sources-carre/new-scientist.png')} />
                                 <Text style={style.sourcesName}>New Scientist</Text>
-                            </TouchableOpacity>
+                                </TouchableOpacity>
                             </Col>
                             <Col style={style.sourcesCol} size={1}>
+                                <TouchableOpacity onPress={() => this.details("bbc-news")}>
                                 <Image style={style.sourcesImg} source={require('../assets/img/sources-carre/bbc-news.png')} />
                                 <Text style={style.sourcesName}>BBC News</Text>
+                                </TouchableOpacity>
                             </Col>
                             <Col style={style.sourcesCol} size={1}>
+                                <TouchableOpacity onPress={() => this.details("bbc-sport")}>
                                 <Image style={style.sourcesImg} source={require('../assets/img/sources-carre/bbc-sport.png')} />
                                 <Text style={style.sourcesName}>BBC Sport</Text>
+                                </TouchableOpacity>
                             </Col>
                         </Row>
                         <Row style={{marginBottom: 20, marginTop: 20}}>
                             <Col style={style.sourcesCol} size={1}>
+                                <TouchableOpacity onPress={() => this.details("techcrunch")}>
                                 <Image style={style.sourcesImg} source={require('../assets/img/sources-carre/techcrunch.png')} />
                                 <Text style={style.sourcesName}>Tech Crunch</Text>
+                                </TouchableOpacity>
                             </Col>
                             <Col style={style.sourcesCol} size={1}>
+                                <TouchableOpacity onPress={() => this.details("techradar")}>
                                 <Image style={style.sourcesImg} source={require('../assets/img/sources-carre/techradar.png')} />
                                 <Text style={style.sourcesName}>Tech Radar</Text>
+                                </TouchableOpacity>
                             </Col>
                             <Col style={style.sourcesCol} size={1}>
+                                <TouchableOpacity onPress={() => this.details("the-economist")}>
                                 <Image style={style.sourcesImg} source={require('../assets/img/sources-carre/the-economist.png')} />
                                 <Text style={style.sourcesName}>The economist</Text>
+                                </TouchableOpacity>
                             </Col>
                             <Col style={style.sourcesCol} size={1}>
+                                <TouchableOpacity onPress={() => this.details("medical-news-today")}>
                                 <Image style={style.sourcesImg} source={require('../assets/img/sources-carre/medical-news-today.png')} />
                                 <Text style={style.sourcesName}>Medical News Today</Text>
+                                </TouchableOpacity>
                             </Col>
                         </Row>
                         <Row style={{marginBottom: 20, marginTop: 20}}>
                             <Col style={style.sourcesCol} size={1}>
+                                <TouchableOpacity onPress={() => this.details("cnn")}>
                                 <Image style={style.sourcesImg} source={require('../assets/img/sources-carre/cnn.png')} />
                                 <Text style={style.sourcesName}>CNN</Text>
+                                </TouchableOpacity>
                             </Col>
                             <Col style={style.sourcesCol} size={1}>
+                                <TouchableOpacity onPress={() => this.details("al-jazeera")}>
                                 <Image style={style.sourcesImg} source={require('../assets/img/sources-carre/al-jazeera.png')} />
                                 <Text style={style.sourcesName}>Al Jazeera</Text>
+                                </TouchableOpacity>
                             </Col>
                             <Col style={style.sourcesCol} size={1}>
+                                <TouchableOpacity onPress={() => this.details("mtv-news")}>
                                 <Image style={style.sourcesImg} source={require('../assets/img/sources-carre/mtv-news.png')} />
                                 <Text style={style.sourcesName}>MTV News</Text>
+                                </TouchableOpacity>
                             </Col>
                             <Col style={style.sourcesCol} size={1}>
+                                <TouchableOpacity onPress={() => this.details("business-insider")}>
                                 <Image style={style.sourcesImg} source={require('../assets/img/sources-carre/business-insider.png')} />
                                 <Text style={style.sourcesName}>Business Insider</Text>
+                                </TouchableOpacity>
                             </Col>                           
                         </Row>
                         <Row style={{marginBottom: 20, marginTop: 20}}>
                             <Col style={style.sourcesCol} size={1}>
+                                <TouchableOpacity onPress={() => this.details("the-wall-street-journal")}>
                                 <Image style={style.sourcesImg} source={require('../assets/img/sources-carre/the-wall-street-journal.png')} />
                                 <Text style={style.sourcesName}>The Wall Street Journal</Text>
+                                </TouchableOpacity>
                             </Col>
                             <Col style={style.sourcesCol} size={1}>
+                                <TouchableOpacity onPress={() => this.details("espn")}>
                                 <Image style={style.sourcesImg} source={require('../assets/img/sources-carre/espn.png')} />
                                 <Text style={style.sourcesName}>ESPN</Text>
+                                </TouchableOpacity>
                             </Col>
                             <Col style={style.sourcesCol} size={1}>
+                                <TouchableOpacity onPress={() => this.details("entertainment-weekly")}>
                                 <Image style={style.sourcesImg} source={require('../assets/img/sources-carre/entertainment-weekly.png')} />
                                 <Text style={style.sourcesName}>Entertainment Weekly</Text>
+                                </TouchableOpacity>
                             </Col>
                             <Col style={style.sourcesCol} size={1}>
                                 
@@ -151,8 +177,8 @@ export default class Sources extends React.Component{
                     <BottomNavigation.Action
                         key="settings"
                         icon="settings"
-                        label="Settings"
-                        onPress={() => this.moveMenuBottom('Categories')}
+                        label="Profile"
+                        onPress={() => this.moveMenuBottom('Profile')}
                     />
                 </BottomNavigation>
             </Container>
