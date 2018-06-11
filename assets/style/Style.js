@@ -36,6 +36,10 @@ export default {
         width: 360,
         height: 220,
     },
+    imgCateg:{
+        width: 360,
+        height: 150,
+    },
     imgV:{
         width: 110,
         height: 110,
@@ -65,7 +69,7 @@ export default {
         margin: 5,
     },
     rowImg:{
-        height: 135,
+        height: 150,
     },
 
     category:{
@@ -112,6 +116,8 @@ export default {
     },
     articleTitle:{
         fontSize:18,
+        marginTop:5,
+        //fontFamily: 'Publico-Black'
     },
     articleSummary:{
         fontSize:12,
@@ -122,9 +128,7 @@ export default {
 
     sourceTime:{
         fontSize:10, 
-        position: 'absolute',
-        bottom: 5,
-        left: 35
+        marginLeft: 15
     },
     sourceCategory:{
         fontSize:12, 
@@ -317,7 +321,7 @@ export default {
         fontSize: 25,
         fontWeight: '600',
         color: '#fff',
-        marginBottom: 10
+        marginBottom: 10,
     },
     mainArticleInfo:{
         flex: 1,
@@ -325,16 +329,12 @@ export default {
         // justifyContent: 'space-between',
         // alignItems: 'center'
     },
-    mainArticleCategory:{
-        color:"#fff",
-        marginRight: 10,
-    },
     mainArticleSource:{
         marginRight: 10,
         color:"#fff",
     },
     mainArticleTime:{
-        marginRight: 10,
+        marginRight: 0,
         color:"#fff",
     },
 

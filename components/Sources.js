@@ -11,23 +11,22 @@ import { PropTypes } from 'prop-types';
 import style from '../assets/style/Style'
 
 
-const propTypes = {
-    navigation: PropTypes.shape({
-        goBack: PropTypes.func.isRequired,
-    }).isRequired,
-};
-
 export default class Sources extends React.Component{
 
-    static navigationOptions = (navigationProps) => {
+    static navigationOptions = ({navigation}) => {
         return {
-            header: (props) => (
-                <Toolbar
-                    style={{backgroundColor: style.pink}}
-                    centerElement="Sources"
-                />
-            ),
-        };
+            title: "SOURCES",
+            headerStyle: { backgroundColor: '#3dc86c'},
+            headerTitleStyle: { color: "#fff", fontSize: 20,  flex:1, textAlign: 'center'},
+            headerLeft:
+                <TouchableOpacity onPress={ () => { navigation.goBack() }}>
+                  <Image style={{marginLeft: 5}} source={require('../assets/img/icons/back.png')} />
+                </TouchableOpacity>,
+            headerRight:
+                <TouchableOpacity>
+                  <Image style={{marginRight: 5}} source={require('../assets/img/icons/ali.png')} />
+                </TouchableOpacity>
+        }
     }
 
     constructor(props) {
@@ -157,26 +156,26 @@ export default class Sources extends React.Component{
                 </ScrollView>
                 <BottomNavigation active={this.state.active}>
                     <BottomNavigation.Action
-                        key="bookmark"
-                        icon="bookmark"
-                        label="For you"
+                        key="home"
+                        icon={<Image source={require('../assets/img/icons/home.png')} />}
+                        label="Home"
                         onPress={() => this.moveMenuBottom('Home')}
                     />
                     <BottomNavigation.Action
                         key="categories"
-                        icon="view-list"
+                        icon={<Image source={require('../assets/img/icons/categories.png')} />}
                         label="Categories"
                         onPress={() => this.moveMenuBottom('Categories')}
                     />
                     <BottomNavigation.Action
-                        key="preferences"
-                        icon="favorite"
+                        key="sources"
+                        icon={<Image source={require('../assets/img/icons/sources.png')} />}
                         label="Sources"
                         onPress={() => this.moveMenuBottom('Sources')}
                     />
                     <BottomNavigation.Action
-                        key="settings"
-                        icon="settings"
+                        key="profile"
+                        icon={<Image source={require('../assets/img/icons/profile.png')} />}
                         label="Profile"
                         onPress={() => this.moveMenuBottom('Profile')}
                     />

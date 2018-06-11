@@ -9,21 +9,26 @@ import axios from 'axios'
 import ArticleRow from './Row'
 import Rowstd from './Rowstd'
 import Toprow from './Toprow'
-// import { Fonts } from '../assets/fonts/Fonts'
-
+import {Utils} from './Utils'
 
 
 export default class Home extends React.Component{
 
-    static navigationOptions = (navigationProps) => {
+
+    static navigationOptions = ({navigation}) => {
         return {
-            header: (props) => (
-                <Toolbar
-                    centerElement="Feedny"
-                    style={{titleText: style.titleToolbar}}
-                />
-            ),
-        };
+            title: <Image source={require('../assets/img/icons/logo.png')} />,
+            headerStyle: { backgroundColor: '#282828'},
+            headerTitleStyle: { color: "#fff", fontSize: 22,  flex:1, textAlign: 'center'},
+            headerLeft:
+                <TouchableOpacity onPress={ () => { navigation.goBack() }}>
+                  <Image style={{marginLeft: 5}} source={require('../assets/img/icons/back.png')} />
+                </TouchableOpacity>,
+            headerRight:
+                <TouchableOpacity>
+                  <Image style={{marginRight: 5}} source={require('../assets/img/icons/ali.png')} />
+                </TouchableOpacity>
+        }
     }
 
 
@@ -40,22 +45,16 @@ export default class Home extends React.Component{
             weather: null
         }
         this.fetchArticles()
-        // this.fetchTopFive()
         //this.fetchWeather(),
-        //console.log(this.state.weather)
 
     }
+    
+
 
     fetchArticles() {
-        axios.get(`http://`+ip+`:5000/api/articles/onload/username=Saïd`).then((response) => {{
+        axios.get(`http://`+Utils.ip+`:5000/api/articles/onload/username=Saïd`).then((response) => {{
             this.setState({articles: response.data})}
         }).catch((error)=>{console.log(error)})            
-    }
-
-    fetchTopFive() {
-        axios.get(`http://`+ip+`:5000/api/articles/category=entertainment`).then((response) => {{
-            this.setState({articles: response.data})}
-        }).catch((error)=>{console.log(error)}) 
     }
 
     fetchWeather(){
@@ -70,11 +69,12 @@ export default class Home extends React.Component{
         this.props.navigation.navigate(activated)
     }
 
+
     render() {
         if (this.state.articles != null) {
             const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
             return (
-                <ImageBackground source={require('./trump.png')} style={style.backgroundImage}>
+                <ImageBackground source={{uri:this.state.articles.articles[0].urlToImage}} style={style.backgroundImage}>
                     <Container>
                         <ScrollView>
                             <Grid style={{margin: 10}}>
@@ -91,11 +91,11 @@ export default class Home extends React.Component{
                                     </View>
                                 </View>
                                 <View style={style.mainArticle}>
-                                    <Text style={style.mainArticleTitle}>Trump accuses Mueller's team of medding in midterm elections</Text>
+                                    <Text style={style.mainArticleTitle}>{this.state.articles.articles[0].title}</Text>
                                     <View style={style.mainArticleInfo}>
-                                        <Text style={style.mainArticleCategory}>WORLD</Text>
-                                        <Text style={style.mainArticleSource}>ABC News</Text>
-                                        <Text style={style.mainArticleTime}>1 hour ago</Text>
+                                        <Text style={{color:"#fff", fontSize:13, marginRight: 10, borderRadius: 3, paddingLeft: 2, paddingRight: 2, backgroundColor: Utils.realCategories[this.state.articles.articles[0].categoryPredicted][1]}}>{Utils.realCategories[this.state.articles.articles[0].categoryPredicted][0]}</Text>
+                                        <Text style={style.mainArticleSource}>{Utils.realSources[this.state.articles.articles[0].source][0]}</Text>
+                                        <Text style={style.mainArticleTime}>{this.state.articles.articles[0].publishedAt}</Text>
                                     </View>
                                 </View>
                                 
@@ -105,34 +105,34 @@ export default class Home extends React.Component{
                             </Grid>
                             <View>
                                 <ListView
-                                    dataSource={ds.cloneWithRows(this.state.articles.articles)}
+                                    dataSource={ds.cloneWithRows(this.state.articles.articles.slice(1, this.state.articles.articles.length))}
                                     renderRow={(row, j, i) => <Toprow navigation={this.props.navigation} article={row} index={parseInt(i, 10)} />}
                                 />
                             </View>
                         </ScrollView>
                         <BottomNavigation active={this.state.active}>
                             <BottomNavigation.Action
-                                key="bookmark"
-                                icon="bookmark"
-                                label="For you"
+                                key="home"
+                                icon={<Image source={require('../assets/img/icons/home.png')} />}
+                                label="Home"
                                 onPress={() => this.moveMenuBottom('Home')}
                             />
                             <BottomNavigation.Action
                                 key="categories"
-                                icon="view-list"
+                                icon={<Image source={require('../assets/img/icons/categories.png')} />}
                                 label="Categories"
                                 onPress={() => this.moveMenuBottom('Categories')}
                             />
                             <BottomNavigation.Action
-                                key="preferences"
-                                icon="favorite"
+                                key="sources"
+                                icon={<Image source={require('../assets/img/icons/sources.png')} />}
                                 label="Sources"
                                 onPress={() => this.moveMenuBottom('Sources')}
                             />
                             <BottomNavigation.Action
-                                key="Profil"
-                                icon="settings"
-                                label="Profil"
+                                key="profile"
+                                icon={<Image source={require('../assets/img/icons/profile.png')} />}
+                                label="Profile"
                                 onPress={() => this.moveMenuBottom('Profile')}
                             />
                         </BottomNavigation>
@@ -147,5 +147,3 @@ export default class Home extends React.Component{
     }
 
 }
-
-const ip = "192.168.1.234"

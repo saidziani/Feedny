@@ -1,5 +1,5 @@
 import React from 'react'
-import { Image, Text, View, StatusBar, ScrollView, ListView, ActivityIndicator, ImageBackground, StyleSheet} from 'react-native';
+import { Image, Text, View, StatusBar, ScrollView, ListView, ActivityIndicator, ImageBackground, StyleSheet, TouchableOpacity} from 'react-native';
 
 import { Toolbar, Button, BottomNavigation, Icon } from 'react-native-material-ui';
 
@@ -13,19 +13,26 @@ import style from '../assets/style/Style'
 import ArticleRow from './Row'
 import Toprow from './Toprow'
 import Swiper from 'react-native-swiper';
+import {Utils} from './Utils'
+
 
 
 export default class Profile extends React.Component {
 
-    static navigationOptions = (navigationProps) => {
+    static navigationOptions = ({navigation}) => {
         return {
-            header: (props) => (
-                <Toolbar
-                    style={{backgroundColor: style.pink}}
-                    centerElement="Profile"
-                />
-            ),
-        };
+            title: "PROFILE",
+            headerStyle: { backgroundColor: '#84bcb2'},
+            headerTitleStyle: { color: "#fff", fontSize: 20,  flex:1, textAlign: 'center'},
+            headerLeft:
+                <TouchableOpacity onPress={ () => { navigation.goBack() }}>
+                  <Image style={{marginLeft: 5}} source={require('../assets/img/icons/back.png')} />
+                </TouchableOpacity>,
+            headerRight:
+                <TouchableOpacity>
+                  <Image style={{marginRight: 5}} source={require('../assets/img/icons/ali.png')} />
+                </TouchableOpacity>
+        }
     }
 
     constructor(props) {
@@ -42,7 +49,7 @@ export default class Profile extends React.Component {
 
     fetchArticles() {
         // axios.get(`http://`+ip+`:5000/api/articles/category=`+this.state.category).then((response) => {
-        axios.get(`http://`+ip+`:5000/api/articles/category=world`).then((response) => {
+        axios.get(`http://`+Utils.ip+`:5000/api/articles/category=world`).then((response) => {
             this.setState({articles: response.data})
         }).catch((error)=>{console.log(error)})
     }
@@ -119,31 +126,31 @@ export default class Profile extends React.Component {
                             </View>
                         </ScrollView>
                         <BottomNavigation active={this.state.active}>
-                            <BottomNavigation.Action
-                                key="bookmark"
-                                icon="bookmark"
-                                label="For you"
-                                onPress={() => this.moveMenuBottom('Home')}
-                            />
-                            <BottomNavigation.Action
-                                key="categories"
-                                icon="view-list"
-                                label="Categories"
-                                onPress={() => this.moveMenuBottom('Categories')}
-                            />
-                            <BottomNavigation.Action
-                                key="preferences"
-                                icon="favorite"
-                                label="Sources"
-                                onPress={() => this.moveMenuBottom('Sources')}
-                            />
-                            <BottomNavigation.Action
-                                key="Profil"
-                                icon="settings"
-                                label="Profil"
-                                onPress={() => this.moveMenuBottom('Profile')}
-                            />
-                        </BottomNavigation>
+                    <BottomNavigation.Action
+                        key="home"
+                        icon={<Image source={require('../assets/img/icons/home.png')} />}
+                        label="Home"
+                        onPress={() => this.moveMenuBottom('Home')}
+                    />
+                    <BottomNavigation.Action
+                        key="categories"
+                        icon={<Image source={require('../assets/img/icons/categories.png')} />}
+                        label="Categories"
+                        onPress={() => this.moveMenuBottom('Categories')}
+                    />
+                    <BottomNavigation.Action
+                        key="sources"
+                        icon={<Image source={require('../assets/img/icons/sources.png')} />}
+                        label="Sources"
+                        onPress={() => this.moveMenuBottom('Sources')}
+                    />
+                    <BottomNavigation.Action
+                        key="profile"
+                        icon={<Image source={require('../assets/img/icons/profile.png')} />}
+                        label="Profile"
+                        onPress={() => this.moveMenuBottom('Profile')}
+                    />
+                </BottomNavigation>
                     </Container>
             )
         } else {
@@ -153,4 +160,3 @@ export default class Profile extends React.Component {
         }
     }
 }
-const ip = "192.168.1.234"

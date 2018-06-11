@@ -5,6 +5,7 @@ import style from '../assets/style/Style'
 
 import { Toolbar, Button, BottomNavigation, Icon } from 'react-native-material-ui';
 import { Col, Row, Grid } from "react-native-easy-grid";
+import {Utils} from './Utils'
 
 
 export default class Toprow extends React.Component{
@@ -26,16 +27,19 @@ export default class Toprow extends React.Component{
             <TouchableOpacity onPress={() => this.showArticle(this.props)}>
             <Row style={style.articleShow}>
                 <Col size={2} style={style.columnBig}>
+                    <Image source={Utils.realSources[this.props.article.source][3]}/>
                     <Text style={style.articleTitle}>
                         {this.props.article.title}
                     </Text>
-                    <Text style={{fontSize:12, fontWeight: '900', position: 'absolute',bottom: 5,
-                        color: bgcolors[this.props.article.categoryPredicted]}}>
-                        {this.props.article.categoryPredicted.toUpperCase()}
-                    </Text>
-                    <Text style={style.sourceTime}>
-                        1 hour ago
-                    </Text>
+
+                    <View style={{position: 'absolute',bottom: 5, flex: 1, flexDirection: 'row',}}>
+                        <Text style={{fontSize:12, fontWeight: '900', color: Utils.realCategories[this.props.article.categoryPredicted][1]}}>
+                            {Utils.realCategories[this.props.article.categoryPredicted][0]}
+                        </Text>
+                        <Text style={style.sourceTime}>
+                            {this.props.article.publishedAt}
+                        </Text>
+                    </View>
                 </Col>
                 <Col size={1} style={style.columnSmall}>
                     <Image style={style.imgV} source={{uri:this.props.article.urlToImage}}/>
@@ -48,8 +52,3 @@ export default class Toprow extends React.Component{
          
    }
 }
-
-
-const bgcolors = {"sport":"#fcc000", "us":"#eb2629", "entertainment":"#b46ef5", "business":"#84bcb2", "health":"#3dc86c", "sci_tech":"#d25c89", "world":"#2598b8", };
-
-const imgSourcePath = "../assets/img/sources/mtv-news.png"

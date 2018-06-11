@@ -11,23 +11,22 @@ import { PropTypes } from 'prop-types';
 import style from '../assets/style/Style'
 
 
-const propTypes = {
-    navigation: PropTypes.shape({
-        goBack: PropTypes.func.isRequired,
-    }).isRequired,
-};
-
 export default class Categories extends React.Component{
 
-    static navigationOptions = (navigationProps) => {
+    static navigationOptions = ({navigation}) => {
         return {
-            header: (props) => (
-                <Toolbar
-                    style={{backgroundColor: style.pink}}
-                    centerElement="Categories"
-                />
-            ),
-        };
+            title: "CATEGORIES",
+            headerStyle: { backgroundColor: '#fcc000'},
+            headerTitleStyle: { color: "#fff", fontSize: 20,  flex:1, textAlign: 'center'},
+            headerLeft:
+                <TouchableOpacity onPress={ () => { navigation.goBack() }}>
+                  <Image style={{marginLeft: 5}} source={require('../assets/img/icons/back.png')} />
+                </TouchableOpacity>,
+            headerRight:
+                <TouchableOpacity>
+                  <Image style={{marginRight: 5}} source={require('../assets/img/icons/ali.png')} />
+                </TouchableOpacity>
+        }
     }
 
     constructor(props) {
@@ -56,7 +55,7 @@ export default class Categories extends React.Component{
                             <View style={{backgroundColor: style.white}, style.centerAll}>
                                 <TouchableOpacity onPress={() => this.details("us")}>
                                     <Text style={style.category}>US</Text>
-                                    <Image style={style.imgR} source={require('../assets/img/categories/us.jpg')} />
+                                    <Image style={style.imgCateg} source={require('../assets/img/categories/us.jpg')} />
                                 </TouchableOpacity>
                             </View>
                         </Row>
@@ -65,7 +64,7 @@ export default class Categories extends React.Component{
                             <View style={{backgroundColor: style.white}, style.centerAll}>
                                 <TouchableOpacity onPress={() => this.details("sport")}>
                                     <Text style={style.category}>Sport</Text>
-                                    <Image style={style.imgR} source={require('../assets/img/categories/sport.jpg')} />
+                                    <Image style={style.imgCateg} source={require('../assets/img/categories/sport.jpg')} />
                                 </TouchableOpacity>
                             </View>
                         </Row>
@@ -74,7 +73,7 @@ export default class Categories extends React.Component{
                             <View style={{backgroundColor: style.white}, style.centerAll}>
                                 <TouchableOpacity onPress={() => this.details("entertainment")}>
                                     <Text style={style.category}>Entertainment</Text>
-                                    <Image style={style.imgR} source={require('../assets/img/categories/culture.jpg')} />
+                                    <Image style={style.imgCateg} source={require('../assets/img/categories/culture.jpg')} />
                                 </TouchableOpacity>
                             </View>
                         </Row>
@@ -83,7 +82,7 @@ export default class Categories extends React.Component{
                             <View style={{backgroundColor: style.white}, style.centerAll}>
                                 <TouchableOpacity onPress={() => this.details("health")}>
                                     <Text style={style.category}>Health</Text>
-                                    <Image style={style.imgR} source={require('../assets/img/categories/health.jpg')} />
+                                    <Image style={style.imgCateg} source={require('../assets/img/categories/health.jpg')} />
                                 </TouchableOpacity>
                             </View>
                         </Row>
@@ -92,16 +91,16 @@ export default class Categories extends React.Component{
                             <View style={{backgroundColor: style.white}, style.centerAll}>
                                 <TouchableOpacity onPress={() => this.details("world")}>
                                     <Text style={style.category}>World</Text>
-                                    <Image style={style.imgR} source={require('../assets/img/categories/world.jpg')} />
+                                    <Image style={style.imgCateg} source={require('../assets/img/categories/world.jpg')} />
                                 </TouchableOpacity>
                             </View>
                         </Row>
 
                         <Row style={style.rowImg}>
                             <View style={{backgroundColor: style.white}, style.centerAll}>
-                                <TouchableOpacity onPress={() => this.details("religion")}>
-                                    <Text style={style.category}>Religion</Text>
-                                    <Image style={style.imgR} source={require('../assets/img/categories/religion.jpg')} />
+                                <TouchableOpacity onPress={() => this.details("sci_tech")}>
+                                    <Text style={style.category}>Science & Technology</Text>
+                                    <Image style={style.imgCateg} source={require('../assets/img/categories/entertainment.jpg')} />
                                 </TouchableOpacity>
                             </View>
                         </Row>
@@ -110,7 +109,7 @@ export default class Categories extends React.Component{
                             <View style={{backgroundColor: style.white}, style.centerAll}>
                                 <TouchableOpacity onPress={() => this.details("business")}>
                                     <Text style={style.category}>Business</Text>
-                                    <Image style={style.imgR} source={require('../assets/img/categories/business.jpg')} />
+                                    <Image style={style.imgCateg} source={require('../assets/img/categories/business.jpg')} />
                                 </TouchableOpacity>
                             </View>
                         </Row>
@@ -118,28 +117,28 @@ export default class Categories extends React.Component{
                 </ScrollView>
                 <BottomNavigation active={this.state.active}>
                     <BottomNavigation.Action
-                        key="bookmark"
-                        icon="bookmark"
-                        label="For you"
+                        key="home"
+                        icon={<Image source={require('../assets/img/icons/home.png')} />}
+                        label="Home"
                         onPress={() => this.moveMenuBottom('Home')}
                     />
                     <BottomNavigation.Action
                         key="categories"
-                        icon="view-list"
+                        icon={<Image source={require('../assets/img/icons/categories.png')} />}
                         label="Categories"
                         onPress={() => this.moveMenuBottom('Categories')}
                     />
                     <BottomNavigation.Action
-                        key="preferences"
-                        icon="favorite"
+                        key="sources"
+                        icon={<Image source={require('../assets/img/icons/sources.png')} />}
                         label="Sources"
                         onPress={() => this.moveMenuBottom('Sources')}
                     />
                     <BottomNavigation.Action
-                        key="settings"
-                        icon="settings"
-                        label="Settings"
-                        onPress={() => this.moveMenuBottom('Categories')}
+                        key="profile"
+                        icon={<Image source={require('../assets/img/icons/profile.png')} />}
+                        label="Profile"
+                        onPress={() => this.moveMenuBottom('Profile')}
                     />
                 </BottomNavigation>
             </Container>
