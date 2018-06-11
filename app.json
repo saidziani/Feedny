@@ -1,5 +1,11 @@
 {
   "expo": {
-    "sdkVersion": "26.0.0"
+    "name": "Feedny",
+    "version": "1.0.0",
+    "description": "Feedny, best recommander news articles",
+    "sdkVersion": "26.0.0",
+    "android": {
+      "package": "said.twss.digital",
+    },
   }
 }

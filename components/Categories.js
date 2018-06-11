@@ -54,7 +54,8 @@ export default class Categories extends React.Component{
                         <Row style={style.rowImg}>
                             <View style={{backgroundColor: style.white}, style.centerAll}>
                                 <TouchableOpacity onPress={() => this.details("us")}>
-                                    <Text style={style.category}>US</Text>
+                                    <Image style={style.categoryImg} source={require('../assets/img/icons/check.png')} />
+                                    <Text style={style.categoryTxt}>US</Text>
                                     <Image style={style.imgCateg} source={require('../assets/img/categories/us.jpg')} />
                                 </TouchableOpacity>
                             </View>
@@ -63,7 +64,8 @@ export default class Categories extends React.Component{
                         <Row style={style.rowImg}>
                             <View style={{backgroundColor: style.white}, style.centerAll}>
                                 <TouchableOpacity onPress={() => this.details("sport")}>
-                                    <Text style={style.category}>Sport</Text>
+                                    <Image style={style.categoryImg} source={require('../assets/img/icons/check.png')} />
+                                    <Text style={style.categoryTxt}>Sport</Text>
                                     <Image style={style.imgCateg} source={require('../assets/img/categories/sport.jpg')} />
                                 </TouchableOpacity>
                             </View>
@@ -72,7 +74,8 @@ export default class Categories extends React.Component{
                         <Row style={style.rowImg}>
                             <View style={{backgroundColor: style.white}, style.centerAll}>
                                 <TouchableOpacity onPress={() => this.details("entertainment")}>
-                                    <Text style={style.category}>Entertainment</Text>
+                                    <Image style={style.categoryImg} source={require('../assets/img/icons/check.png')} />
+                                    <Text style={style.categoryTxt}>Entertainment</Text>
                                     <Image style={style.imgCateg} source={require('../assets/img/categories/culture.jpg')} />
                                 </TouchableOpacity>
                             </View>
@@ -81,7 +84,8 @@ export default class Categories extends React.Component{
                         <Row style={style.rowImg}>
                             <View style={{backgroundColor: style.white}, style.centerAll}>
                                 <TouchableOpacity onPress={() => this.details("health")}>
-                                    <Text style={style.category}>Health</Text>
+                                    <Image style={style.categoryImg} source={require('../assets/img/icons/check.png')} />
+                                    <Text style={style.categoryTxt}>Health</Text>
                                     <Image style={style.imgCateg} source={require('../assets/img/categories/health.jpg')} />
                                 </TouchableOpacity>
                             </View>
@@ -90,7 +94,8 @@ export default class Categories extends React.Component{
                         <Row style={style.rowImg}>
                             <View style={{backgroundColor: style.white}, style.centerAll}>
                                 <TouchableOpacity onPress={() => this.details("world")}>
-                                    <Text style={style.category}>World</Text>
+                                    <Image style={style.categoryImg} source={require('../assets/img/icons/check.png')} />
+                                    <Text style={style.categoryTxt}>World</Text>
                                     <Image style={style.imgCateg} source={require('../assets/img/categories/world.jpg')} />
                                 </TouchableOpacity>
                             </View>
@@ -99,7 +104,8 @@ export default class Categories extends React.Component{
                         <Row style={style.rowImg}>
                             <View style={{backgroundColor: style.white}, style.centerAll}>
                                 <TouchableOpacity onPress={() => this.details("sci_tech")}>
-                                    <Text style={style.category}>Science & Technology</Text>
+                                    <Image style={style.categoryImg} source={require('../assets/img/icons/check.png')} />
+                                    <Text style={style.categoryTxt}>Science & Technology</Text>
                                     <Image style={style.imgCateg} source={require('../assets/img/categories/entertainment.jpg')} />
                                 </TouchableOpacity>
                             </View>
@@ -108,7 +114,8 @@ export default class Categories extends React.Component{
                         <Row style={style.rowImg}>
                             <View style={{backgroundColor: style.white}, style.centerAll}>
                                 <TouchableOpacity onPress={() => this.details("business")}>
-                                    <Text style={style.category}>Business</Text>
+                                    <Image style={style.categoryImg} source={require('../assets/img/icons/check.png')} />
+                                    <Text style={style.categoryTxt}>Business</Text>
                                     <Image style={style.imgCateg} source={require('../assets/img/categories/business.jpg')} />
                                 </TouchableOpacity>
                             </View>

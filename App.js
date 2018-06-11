@@ -45,7 +45,7 @@ const RootStack = StackNavigator(
         Landing: { screen: Landing,},
     },
     {
-        initialRouteName: 'Landing',
+        initialRouteName: 'Categories',
     }
 );
 

@@ -72,13 +72,19 @@ export default {
         height: 150,
     },
 
-    category:{
+    categoryTxt:{
         zIndex: 99999,
         position: 'absolute',
-        top: 10,
-        left: 10,
+        top: 60,
+        left: 70,
         fontSize: 30,
         color: white,
+    },
+    categoryImg:{
+        zIndex: 99999,
+        position: 'absolute',
+        top: 60,
+        left: 30,
     },
 
     /*Personalize*/

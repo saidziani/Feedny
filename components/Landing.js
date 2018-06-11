@@ -11,7 +11,7 @@ export default class Landing extends React.Component{
     componentDidMount(){
         setTimeout( () => {
             this.move();
-        },200);
+        },2000);
         //StatusBar.setHidden(true);
     }
 
@@ -26,7 +26,7 @@ export default class Landing extends React.Component{
     render(){
         return(
             <View style={{flex: 1, justifyContent: 'center',  alignItems: 'center', backgroundColor: '#282828'}}>
-                <Image source={require('../assets/img/icons/logo.png')}  />
+                <Image source={require('../assets/img/icons/logo-small.png')}  />
             </View>         
         )
     }
