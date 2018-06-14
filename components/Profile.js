@@ -1,10 +1,8 @@
 import React from 'react'
 import { Image, Text, View, StatusBar, ScrollView, ListView, ActivityIndicator, ImageBackground, StyleSheet, TouchableOpacity} from 'react-native';
-
 import { Toolbar, Button, BottomNavigation, Icon } from 'react-native-material-ui';
-
 import axios from 'axios'
-
+import { TextField } from 'react-native-material-textfield';
 import { Col, Row, Grid } from "react-native-easy-grid";
 
 import Container from './Container';
@@ -26,11 +24,11 @@ export default class Profile extends React.Component {
             headerTitleStyle: { color: "#fff", fontSize: 20,  flex:1, textAlign: 'center'},
             headerLeft:
                 <TouchableOpacity onPress={ () => { navigation.goBack() }}>
-                  <Image style={{marginLeft: 5}} source={require('../assets/img/icons/back.png')} />
+                  <Image style={{marginLeft: 10}} source={require('../assets/img/icons/back.png')} />
                 </TouchableOpacity>,
             headerRight:
                 <TouchableOpacity>
-                  <Image style={{marginRight: 5}} source={require('../assets/img/icons/ali.png')} />
+                  <Image style={{marginRight: 10}} source={require('../assets/img/icons/ali.png')} />
                 </TouchableOpacity>
         }
     }
@@ -42,7 +40,8 @@ export default class Profile extends React.Component {
             active: 'today',
             // category: this.props.navigation.state.params.category,
             category: "world",
-            articles: null
+            articles: null,
+            account: 'imene'
         }
         this.fetchArticles()
     }
@@ -60,6 +59,95 @@ export default class Profile extends React.Component {
     }
 
     render() {
+        if (this.state.account == null) {
+            return(
+            <Container>
+                    <ScrollView style={{backgroundColor: '#fff'}}>
+                    <View style={style.container}>
+                        <View>
+                            <Text style={{fontSize: 30}}>Welcome!</Text>
+                            <Text style={{fontSize: 22}}>Sign in to personalize your feed</Text>
+                        </View>
+                        <View style={{margin: 20}}>
+                            <TextField
+                                style={{paddingTop: 350}}
+                                label='Email or Username'
+                            />
+                            <TextField
+                                secureTextEntry={true}
+                                label='Password'
+                            />
+                            <View style={{alignItems: 'center', flex:1, flexDirection: 'row', 
+                            justifyContent: 'space-between', marginTop: 20}}>
+                                <Text style={{width: '50%'}} style={{fontSize: 12}}>
+                                    forgor your password?
+                                </Text>   
+                                <TouchableOpacity style={style.LoginStyle} activeOpacity={0.5}>
+                                 <Text style={style.LoginTextStyle}>LOGIN</Text>
+                               </TouchableOpacity>
+                            </View>
+
+                            <View style={{marginTop: 20}}>  
+                                <TouchableOpacity style={style.GoogleStyle} activeOpacity={0.5}>
+                                 <Image 
+                                  source={require('../assets/img/icons/ggl.png')} 
+                                  style={style.ImageIconStyleBiss} 
+                                  />
+                                 <Text style={style.GoogleTextStyle}>Sign in with Google</Text>
+                               </TouchableOpacity>
+                            </View>
+                            <View style={{marginTop: 20}}>  
+                                <TouchableOpacity style={style.FacebookStyle} activeOpacity={0.5}>
+                                 <Image 
+                                  source={require('../assets/img/icons/fb.png')} 
+                                  style={style.ImageIconStyle} 
+                                  />
+                                 <Text style={style.FacebookTextStyle}>Sign in with Facebook</Text>
+                               </TouchableOpacity>
+                            </View>
+                            <View style={{marginTop: 20}}>  
+                                <TouchableOpacity style={style.TwitterStyle} activeOpacity={0.5}>
+                                 <Image 
+                                  source={require('../assets/img/icons/twit.png')} 
+                                  style={style.ImageIconStyleBiss} 
+                                  />
+                                 <Text style={style.TwitterTextStyle}>Sign in with Twitter</Text>
+                               </TouchableOpacity>
+                            </View>
+
+                        </View>
+                    </View>
+                </ScrollView>
+                <BottomNavigation active={this.state.active}>
+                    <BottomNavigation.Action
+                        key="home"
+                        icon={<Image source={require('../assets/img/icons/home.png')} />}
+                        label="Home"
+                        onPress={() => this.moveMenuBottom('Home')}
+                    />
+                    <BottomNavigation.Action
+                        key="categories"
+                        icon={<Image source={require('../assets/img/icons/categories.png')} />}
+                        label="Categories"
+                        onPress={() => this.moveMenuBottom('Categories')}
+                    />
+                    <BottomNavigation.Action
+                        key="sources"
+                        icon={<Image source={require('../assets/img/icons/sources.png')} />}
+                        label="Sources"
+                        onPress={() => this.moveMenuBottom('Sources')}
+                    />
+                    <BottomNavigation.Action
+                        key="profile"
+                        icon={<Image source={require('../assets/img/icons/profile.png')} />}
+                        label="Profile"
+                        onPress={() => this.moveMenuBottom('Profile')}
+                    />
+                </BottomNavigation>
+            </Container>
+            )
+        }
+        else{
         if (this.state.articles != null) {
             const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
             return (
@@ -158,5 +246,7 @@ export default class Profile extends React.Component {
                 <ActivityIndicator style={style.centerAll} color={style.red} size="large"/>
             )
         }
+        }
     }
 }
+

@@ -18,7 +18,6 @@ import Sources from "./components/Sources"
 import Toprow from './components/Toprow'
 import Profile from './components/Profile'
 import Landing from './components/Landing'
-import { Font, AppLoading } from 'expo'
 
 
 import { YellowBox } from 'react-native';
@@ -45,38 +44,13 @@ const RootStack = StackNavigator(
         Landing: { screen: Landing,},
     },
     {
-        initialRouteName: 'Categories',
+        initialRouteName: 'Landing',
     }
 );
 
 export default class App extends React.Component {
 
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            isReady: false
-        }
-    }
-
-    componentWillMount() {
-        (async() => {
-            await Font.loadAsync({
-            'Publico': require("./assets/fonts/en/Publico/Publico-Medium.otf"),
-            'Publico-Black': require("./assets/fonts/en/Publico/Publico-Black.otf"),
-            'Raleway': require("./assets/fonts/en/Raleway/Raleway-Regular.ttf"),
-            'Raleway-Black': require("./assets/fonts/en/Raleway/Raleway-Black.ttf"),
-            'Raleway-Bold': require("./assets/fonts/en/Raleway/Raleway-Bold.ttf"),
-            });
-            this.setState({ isReady: true});
-        })();
-    }
-
     render() {
-        if (!this.state.isReady) {
-            return <AppLoading />;
-        }
-
         return (
             <ThemeProvider uiTheme={uiTheme}>
                 <RootStack />

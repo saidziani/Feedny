@@ -20,11 +20,11 @@ export default class Categories extends React.Component{
             headerTitleStyle: { color: "#fff", fontSize: 20,  flex:1, textAlign: 'center'},
             headerLeft:
                 <TouchableOpacity onPress={ () => { navigation.goBack() }}>
-                  <Image style={{marginLeft: 5}} source={require('../assets/img/icons/back.png')} />
+                  <Image style={{marginLeft: 10}} source={require('../assets/img/icons/back.png')} />
                 </TouchableOpacity>,
             headerRight:
                 <TouchableOpacity>
-                  <Image style={{marginRight: 5}} source={require('../assets/img/icons/ali.png')} />
+                  <Image style={{marginRight: 10}} source={require('../assets/img/icons/ali.png')} />
                 </TouchableOpacity>
         }
     }
@@ -53,7 +53,7 @@ export default class Categories extends React.Component{
                     <Grid>
                         <Row style={style.rowImg}>
                             <View style={{backgroundColor: style.white}, style.centerAll}>
-                                <TouchableOpacity onPress={() => this.details("us")}>
+                                <TouchableOpacity onPress={() => this.details("us")} activeOpacity={0.8}>
                                     <Image style={style.categoryImg} source={require('../assets/img/icons/check.png')} />
                                     <Text style={style.categoryTxt}>US</Text>
                                     <Image style={style.imgCateg} source={require('../assets/img/categories/us.jpg')} />
@@ -63,7 +63,7 @@ export default class Categories extends React.Component{
 
                         <Row style={style.rowImg}>
                             <View style={{backgroundColor: style.white}, style.centerAll}>
-                                <TouchableOpacity onPress={() => this.details("sport")}>
+                                <TouchableOpacity onPress={() => this.details("sport")} activeOpacity={0.8}>
                                     <Image style={style.categoryImg} source={require('../assets/img/icons/check.png')} />
                                     <Text style={style.categoryTxt}>Sport</Text>
                                     <Image style={style.imgCateg} source={require('../assets/img/categories/sport.jpg')} />
@@ -73,7 +73,7 @@ export default class Categories extends React.Component{
 
                         <Row style={style.rowImg}>
                             <View style={{backgroundColor: style.white}, style.centerAll}>
-                                <TouchableOpacity onPress={() => this.details("entertainment")}>
+                                <TouchableOpacity onPress={() => this.details("entertainment")} activeOpacity={0.8}>
                                     <Image style={style.categoryImg} source={require('../assets/img/icons/check.png')} />
                                     <Text style={style.categoryTxt}>Entertainment</Text>
                                     <Image style={style.imgCateg} source={require('../assets/img/categories/culture.jpg')} />
@@ -83,7 +83,7 @@ export default class Categories extends React.Component{
 
                         <Row style={style.rowImg}>
                             <View style={{backgroundColor: style.white}, style.centerAll}>
-                                <TouchableOpacity onPress={() => this.details("health")}>
+                                <TouchableOpacity onPress={() => this.details("health")} activeOpacity={0.8}>
                                     <Image style={style.categoryImg} source={require('../assets/img/icons/check.png')} />
                                     <Text style={style.categoryTxt}>Health</Text>
                                     <Image style={style.imgCateg} source={require('../assets/img/categories/health.jpg')} />
@@ -93,7 +93,7 @@ export default class Categories extends React.Component{
 
                         <Row style={style.rowImg}>
                             <View style={{backgroundColor: style.white}, style.centerAll}>
-                                <TouchableOpacity onPress={() => this.details("world")}>
+                                <TouchableOpacity onPress={() => this.details("world")} activeOpacity={0.8}>
                                     <Image style={style.categoryImg} source={require('../assets/img/icons/check.png')} />
                                     <Text style={style.categoryTxt}>World</Text>
                                     <Image style={style.imgCateg} source={require('../assets/img/categories/world.jpg')} />
@@ -103,7 +103,7 @@ export default class Categories extends React.Component{
 
                         <Row style={style.rowImg}>
                             <View style={{backgroundColor: style.white}, style.centerAll}>
-                                <TouchableOpacity onPress={() => this.details("sci_tech")}>
+                                <TouchableOpacity onPress={() => this.details("sci_tech")} activeOpacity={0.8}>
                                     <Image style={style.categoryImg} source={require('../assets/img/icons/check.png')} />
                                     <Text style={style.categoryTxt}>Science & Technology</Text>
                                     <Image style={style.imgCateg} source={require('../assets/img/categories/entertainment.jpg')} />
@@ -113,7 +113,7 @@ export default class Categories extends React.Component{
 
                         <Row style={style.rowImg}>
                             <View style={{backgroundColor: style.white}, style.centerAll}>
-                                <TouchableOpacity onPress={() => this.details("business")}>
+                                <TouchableOpacity onPress={() => this.details("business")} activeOpacity={0.8}>
                                     <Image style={style.categoryImg} source={require('../assets/img/icons/check.png')} />
                                     <Text style={style.categoryTxt}>Business</Text>
                                     <Image style={style.imgCateg} source={require('../assets/img/categories/business.jpg')} />

@@ -24,7 +24,7 @@ export default class Toprow extends React.Component{
 
     render (){
         return(
-            <TouchableOpacity onPress={() => this.showArticle(this.props)}>
+            <TouchableOpacity onPress={() => this.showArticle(this.props)} activeOpacity={0.8}>
             <Row style={style.articleShow}>
                 <Col size={2} style={style.columnBig}>
                     <Image source={Utils.realSources[this.props.article.source][3]}/>

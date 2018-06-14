@@ -121,7 +121,7 @@ export default {
         // borderBottomColor: gray,
     },
     articleTitle:{
-        fontSize:18,
+        fontSize:15,
         marginTop:5,
         //fontFamily: 'Publico-Black'
     },
@@ -305,6 +305,11 @@ export default {
         fontSize:17,
         marginBottom:15
     },
+    detailsSummaryParagraphe:{
+        fontSize:16,
+        fontWeight: '500',
+        marginBottom:15
+    },
     mainArticleImg:{
         height:220,
     },
@@ -315,6 +320,15 @@ export default {
         fontSize: 20,
         color: "#fff"
     },
+    translateText:{
+        fontSize: 15,
+        color: "#f1f1f1"
+    },
+    translateButton:{
+        position: 'absolute',
+        top: 10,
+        right: 10,
+    },
 
 
     /*****************/
@@ -324,7 +338,7 @@ export default {
         left: 5
     },
     mainArticleTitle:{
-        fontSize: 25,
+        fontSize: 22,
         fontWeight: '600',
         color: '#fff',
         marginBottom: 10,
@@ -365,5 +379,71 @@ export default {
     sourcesImg:{
         width: 75, 
         height: 75
-    }
-}
+    },
+
+    /******FB/GGL/TWIT****/
+    FacebookStyle: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      backgroundColor: '#485a96',
+      height: 38,
+    },
+
+    GoogleStyle: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      backgroundColor: '#f1f1f1',
+      height: 38,
+    },
+
+    TwitterStyle: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      backgroundColor: '#00aced',
+      height: 38,
+    },
+
+    LoginStyle: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      backgroundColor: '#3dc86c',
+      height: 38,
+    },
+
+    ImageIconStyle: {
+       padding: 10,
+       height: 28,
+       width: 28,
+       marginLeft:7,
+       marginRight:6,
+       resizeMode : 'stretch',
+    },
+    ImageIconStyleBiss: {
+       padding: 10,
+       height: 20,
+       width: 20,
+       marginLeft:10,
+       marginRight:10,
+       resizeMode : 'stretch',
+    },
+
+    FacebookTextStyle :{
+      color: "#fff",
+    },
+
+    TwitterTextStyle :{
+      color: "#fff",
+    },
+
+    GoogleTextStyle :{
+      color: "#1c1c1c",
+    },
+
+    LoginTextStyle :{
+      color: "#fff",
+      marginLeft: 30,
+      marginRight: 30,
+    },
+
+
+}   

@@ -21,11 +21,11 @@ export default class Sarticles extends React.Component {
             headerTitleStyle: { color: "#fff", textAlign:"center", flex:1 },
             headerLeft:
                 <TouchableOpacity onPress={ () => { navigation.goBack() }}>
-                  <Image style={{marginLeft: 5}} source={require('../assets/img/icons/back.png')} />
+                  <Image style={{marginLeft: 10}} source={require('../assets/img/icons/back.png')} />
                 </TouchableOpacity>,
             headerRight:
                 <TouchableOpacity>
-                  <Image style={{marginRight: 5}} source={require('../assets/img/icons/check.png')} />
+                  <Image style={{marginRight: 10}} source={require('../assets/img/icons/check.png')} />
                 </TouchableOpacity>
         }
     }

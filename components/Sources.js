@@ -20,11 +20,11 @@ export default class Sources extends React.Component{
             headerTitleStyle: { color: "#fff", fontSize: 20,  flex:1, textAlign: 'center'},
             headerLeft:
                 <TouchableOpacity onPress={ () => { navigation.goBack() }}>
-                  <Image style={{marginLeft: 5}} source={require('../assets/img/icons/back.png')} />
+                  <Image style={{marginLeft: 10}} source={require('../assets/img/icons/back.png')} />
                 </TouchableOpacity>,
             headerRight:
                 <TouchableOpacity>
-                  <Image style={{marginRight: 5}} source={require('../assets/img/icons/ali.png')} />
+                  <Image style={{marginRight: 10}} source={require('../assets/img/icons/ali.png')} />
                 </TouchableOpacity>
         }
     }
@@ -53,25 +53,25 @@ export default class Sources extends React.Component{
                     <Grid style={{margin:10}}>
                         <Row style={{marginBottom: 20, marginTop: 20}}>
                             <Col style={style.sourcesCol} size={1}>
-                                <TouchableOpacity onPress={() => this.details("the-new-york-times")}>
+                                <TouchableOpacity onPress={() => this.details("the-new-york-times")} activeOpacity={0.8}>
                                 <Image style={style.sourcesImg} source={require('../assets/img/sources-carre/the-new-york-times.png')} />
                                 <Text style={style.sourcesName}>The New York Times</Text>
                                 </TouchableOpacity>
                             </Col>
                             <Col style={style.sourcesCol} size={1}>
-                                <TouchableOpacity onPress={() => this.details("new-scientist")}>
+                                <TouchableOpacity onPress={() => this.details("new-scientist")} activeOpacity={0.8}>
                                 <Image style={style.sourcesImg} source={require('../assets/img/sources-carre/new-scientist.png')} />
                                 <Text style={style.sourcesName}>New Scientist</Text>
                                 </TouchableOpacity>
                             </Col>
                             <Col style={style.sourcesCol} size={1}>
-                                <TouchableOpacity onPress={() => this.details("bbc-news")}>
+                                <TouchableOpacity onPress={() => this.details("bbc-news")} activeOpacity={0.8}>
                                 <Image style={style.sourcesImg} source={require('../assets/img/sources-carre/bbc-news.png')} />
                                 <Text style={style.sourcesName}>BBC News</Text>
                                 </TouchableOpacity>
                             </Col>
                             <Col style={style.sourcesCol} size={1}>
-                                <TouchableOpacity onPress={() => this.details("bbc-sport")}>
+                                <TouchableOpacity onPress={() => this.details("bbc-sport")} activeOpacity={0.8}>
                                 <Image style={style.sourcesImg} source={require('../assets/img/sources-carre/bbc-sport.png')} />
                                 <Text style={style.sourcesName}>BBC Sport</Text>
                                 </TouchableOpacity>
@@ -79,25 +79,25 @@ export default class Sources extends React.Component{
                         </Row>
                         <Row style={{marginBottom: 20, marginTop: 20}}>
                             <Col style={style.sourcesCol} size={1}>
-                                <TouchableOpacity onPress={() => this.details("techcrunch")}>
+                                <TouchableOpacity onPress={() => this.details("techcrunch")} activeOpacity={0.8}>
                                 <Image style={style.sourcesImg} source={require('../assets/img/sources-carre/techcrunch.png')} />
                                 <Text style={style.sourcesName}>Tech Crunch</Text>
                                 </TouchableOpacity>
                             </Col>
                             <Col style={style.sourcesCol} size={1}>
-                                <TouchableOpacity onPress={() => this.details("techradar")}>
+                                <TouchableOpacity onPress={() => this.details("techradar")} activeOpacity={0.8}>
                                 <Image style={style.sourcesImg} source={require('../assets/img/sources-carre/techradar.png')} />
                                 <Text style={style.sourcesName}>Tech Radar</Text>
                                 </TouchableOpacity>
                             </Col>
                             <Col style={style.sourcesCol} size={1}>
-                                <TouchableOpacity onPress={() => this.details("the-economist")}>
+                                <TouchableOpacity onPress={() => this.details("the-economist")} activeOpacity={0.8}>
                                 <Image style={style.sourcesImg} source={require('../assets/img/sources-carre/the-economist.png')} />
                                 <Text style={style.sourcesName}>The economist</Text>
                                 </TouchableOpacity>
                             </Col>
                             <Col style={style.sourcesCol} size={1}>
-                                <TouchableOpacity onPress={() => this.details("medical-news-today")}>
+                                <TouchableOpacity onPress={() => this.details("medical-news-today")} activeOpacity={0.8}>
                                 <Image style={style.sourcesImg} source={require('../assets/img/sources-carre/medical-news-today.png')} />
                                 <Text style={style.sourcesName}>Medical News Today</Text>
                                 </TouchableOpacity>
@@ -105,25 +105,25 @@ export default class Sources extends React.Component{
                         </Row>
                         <Row style={{marginBottom: 20, marginTop: 20}}>
                             <Col style={style.sourcesCol} size={1}>
-                                <TouchableOpacity onPress={() => this.details("cnn")}>
+                                <TouchableOpacity onPress={() => this.details("cnn")} activeOpacity={0.8}>
                                 <Image style={style.sourcesImg} source={require('../assets/img/sources-carre/cnn.png')} />
                                 <Text style={style.sourcesName}>CNN</Text>
                                 </TouchableOpacity>
                             </Col>
                             <Col style={style.sourcesCol} size={1}>
-                                <TouchableOpacity onPress={() => this.details("al-jazeera")}>
+                                <TouchableOpacity onPress={() => this.details("al-jazeera")} activeOpacity={0.8}>
                                 <Image style={style.sourcesImg} source={require('../assets/img/sources-carre/al-jazeera.png')} />
                                 <Text style={style.sourcesName}>Al Jazeera</Text>
                                 </TouchableOpacity>
                             </Col>
                             <Col style={style.sourcesCol} size={1}>
-                                <TouchableOpacity onPress={() => this.details("mtv-news")}>
+                                <TouchableOpacity onPress={() => this.details("mtv-news")} activeOpacity={0.8}>
                                 <Image style={style.sourcesImg} source={require('../assets/img/sources-carre/mtv-news.png')} />
                                 <Text style={style.sourcesName}>MTV News</Text>
                                 </TouchableOpacity>
                             </Col>
                             <Col style={style.sourcesCol} size={1}>
-                                <TouchableOpacity onPress={() => this.details("business-insider")}>
+                                <TouchableOpacity onPress={() => this.details("business-insider")} activeOpacity={0.8}>
                                 <Image style={style.sourcesImg} source={require('../assets/img/sources-carre/business-insider.png')} />
                                 <Text style={style.sourcesName}>Business Insider</Text>
                                 </TouchableOpacity>
@@ -131,19 +131,19 @@ export default class Sources extends React.Component{
                         </Row>
                         <Row style={{marginBottom: 20, marginTop: 20}}>
                             <Col style={style.sourcesCol} size={1}>
-                                <TouchableOpacity onPress={() => this.details("the-wall-street-journal")}>
+                                <TouchableOpacity onPress={() => this.details("the-wall-street-journal")} activeOpacity={0.8}>
                                 <Image style={style.sourcesImg} source={require('../assets/img/sources-carre/the-wall-street-journal.png')} />
                                 <Text style={style.sourcesName}>The Wall Street Journal</Text>
                                 </TouchableOpacity>
                             </Col>
                             <Col style={style.sourcesCol} size={1}>
-                                <TouchableOpacity onPress={() => this.details("espn")}>
+                                <TouchableOpacity onPress={() => this.details("espn")} activeOpacity={0.8}>
                                 <Image style={style.sourcesImg} source={require('../assets/img/sources-carre/espn.png')} />
                                 <Text style={style.sourcesName}>ESPN</Text>
                                 </TouchableOpacity>
                             </Col>
                             <Col style={style.sourcesCol} size={1}>
-                                <TouchableOpacity onPress={() => this.details("entertainment-weekly")}>
+                                <TouchableOpacity onPress={() => this.details("entertainment-weekly")} activeOpacity={0.8}>
                                 <Image style={style.sourcesImg} source={require('../assets/img/sources-carre/entertainment-weekly.png')} />
                                 <Text style={style.sourcesName}>Entertainment Weekly</Text>
                                 </TouchableOpacity>

@@ -22,11 +22,11 @@ export default class Home extends React.Component{
             headerTitleStyle: { color: "#fff", fontSize: 22,  flex:1, textAlign: 'center'},
             headerLeft:
                 <TouchableOpacity onPress={ () => { navigation.goBack() }}>
-                  <Image style={{marginLeft: 5}} source={require('../assets/img/icons/back.png')} />
+                  <Image style={{marginLeft: 10}} source={require('../assets/img/icons/back.png')} />
                 </TouchableOpacity>,
             headerRight:
                 <TouchableOpacity>
-                  <Image style={{marginRight: 5}} source={require('../assets/img/icons/ali.png')} />
+                  <Image style={{marginRight: 10}} source={require('../assets/img/icons/ali.png')} />
                 </TouchableOpacity>
         }
     }
@@ -82,10 +82,10 @@ export default class Home extends React.Component{
                                     <View style={style.hiYou}>
                                         <View>
                                             <Text style={style.hiMsg}>Good morning.</Text>
-                                            <Text style={{color: 'white', fontSize: 18}}>Amel</Text>
+                                            <Text style={{color: 'white', fontSize: 18}}>Imene</Text>
                                         </View>
                                         <View>
-                                            <Text style={{color: 'white', fontSize: 18}}>25^C</Text>
+                                            <Text style={{color: 'white', fontSize: 18}}>25</Text>
                                             <Text style={{color: 'white', fontSize: 18}}>Algiers</Text>
                                         </View>
                                     </View>
