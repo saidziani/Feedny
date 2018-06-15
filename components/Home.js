@@ -93,7 +93,7 @@ export default class Home extends React.Component{
                                 <View style={style.mainArticle}>
                                     <Text style={style.mainArticleTitle}>{this.state.articles.articles[0].title}</Text>
                                     <View style={style.mainArticleInfo}>
-                                        <Text style={{color:"#fff", fontSize:13, marginRight: 10, borderRadius: 3, paddingLeft: 2, paddingRight: 2, backgroundColor: Utils.realCategories[this.state.articles.articles[0].categoryPredicted][1]}}>{Utils.realCategories[this.state.articles.articles[0].categoryPredicted][0]}</Text>
+                                        <Text style={{color:"#fff", fontSize:12, marginRight: 10, borderRadius: 3, paddingLeft: 2, paddingRight: 2, backgroundColor: Utils.realCategories[this.state.articles.articles[0].categoryPredicted][1]}}>{Utils.realCategories[this.state.articles.articles[0].categoryPredicted][0]}</Text>
                                         <Text style={style.mainArticleSource}>{Utils.realSources[this.state.articles.articles[0].source][0]}</Text>
                                         <Text style={style.mainArticleTime}>{this.state.articles.articles[0].publishedAt}</Text>
                                     </View>

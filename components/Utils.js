@@ -55,7 +55,7 @@ export const Utils = {
         ],
         "medical-news-today":[
             "Medical News Today",
-            '#fff',
+            '#00A1D2',
             require("../assets/img/sources-small/medical-news-today.png"),
             require("../assets/img/sources/medical-news-today.png")
         ],
@@ -67,13 +67,13 @@ export const Utils = {
         ],
         "al-jazeera":[
             "Al Jazeera",
-            '#fff',
+            '#e9e9e9',
             require("../assets/img/sources-small/al-jazeera.png"),
             require("../assets/img/sources/al-jazeera.png")
         ],
         "al-jazeera-english":[
             "Al Jazeera",
-            '#fff',
+            '#e9e9e9',
             require("../assets/img/sources-small/al-jazeera.png"),
             require("../assets/img/sources/al-jazeera.png")
         ],
@@ -90,8 +90,8 @@ export const Utils = {
             require("../assets/img/sources/business-insider.png")
         ],
         "the-wall-street-journal":[
-            "The Wall Street Journal",
-            '#fff',
+            "The Wall Street",
+            '#000',
             require("../assets/img/sources-small/the-wall-street-journal.png"),
             require("../assets/img/sources/the-wall-street-journal.png")
         ],

@@ -318,16 +318,21 @@ export default {
         bottom: 15,
         left: 15,
         fontSize: 20,
-        color: "#fff"
+        color: "#fff",
     },
     translateText:{
         fontSize: 15,
-        color: "#f1f1f1"
+        color: "#f1f1f1",
+        backgroundColor: 'rgba(0, 0, 0, 0.4)',
+        padding: 5,
+        paddingTop: 2,
+        paddingBottom: 2,
+        borderRadius: 8
     },
     translateButton:{
         position: 'absolute',
-        top: 10,
-        right: 10,
+        top: 5,
+        right: 5,
     },
 
 

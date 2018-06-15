@@ -16,8 +16,8 @@ export default class Sarticles extends React.Component {
 
     static navigationOptions = ({navigation}) => {
         return {
-            title: `${realSources[navigation.state.params.source][0]}`.toUpperCase(),
-            headerStyle: { backgroundColor: `${realSources[navigation.state.params.source][1]}`, elevation: 0 },
+            title: `${Utils.realSources[navigation.state.params.source][0]}`.toUpperCase(),
+            headerStyle: { backgroundColor: `${Utils.realSources[navigation.state.params.source][1]}`, elevation: 0 },
             headerTitleStyle: { color: "#fff", textAlign:"center", flex:1 },
             headerLeft:
                 <TouchableOpacity onPress={ () => { navigation.goBack() }}>
@@ -56,8 +56,8 @@ export default class Sarticles extends React.Component {
             return (
                     <Container>
                         <ScrollView>
-                            <View style={{backgroundColor: realSources[this.state.source][1], height: 170, flex:1, alignItems: 'center', justifyContent: 'center'}}>
-                                <Image source={realSources[this.state.source][2]} />
+                            <View style={{backgroundColor: Utils.realSources[this.state.source][1], height: 170, flex:1, alignItems: 'center', justifyContent: 'center'}}>
+                                <Image source={Utils.realSources[this.state.source][2]} />
                             </View>
                             <View>
                                 <ListView
@@ -74,82 +74,4 @@ export default class Sarticles extends React.Component {
             )
         }
     }
-}
-
-const realSources = {
-    "the-new-york-times":[
-        "The New York Times",
-        "#6EC8E3",
-        require("../assets/img/sources-small/the-new-york-times.png")
-    ],
-    "new-scientist":[
-        "New Scientist",
-        '#002937',
-        require("../assets/img/sources-small/new-scientist.png")
-    ],
-    "bbc-news":[
-        "BBC News",
-        '#9D0A0E',
-        require("../assets/img/sources-small/bbc-news.png")
-    ],
-    "bbc-sport":[
-        "BBC Sport",
-        '#FFD22F',
-        require("../assets/img/sources-small/bbc-sport.png")
-    ],
-    "techcrunch":[
-        "Tech Crunch",
-        '#0A9E00',
-        require("../assets/img/sources-small/techcrunch.png")
-    ],
-    "techradar":[
-        "Tech Radar",
-        '#316D91',
-        require("../assets/img/sources-small/techradar.png")
-    ],
-    "the-economist":[
-        "The Economist",
-        '#FE0000',
-        require("../assets/img/sources-small/the-economist.png")
-    ],
-    "medical-news-today":[
-        "Medical News Today",
-        '#fff',
-        require("../assets/img/sources-small/medical-news-today.png")
-    ],
-    "cnn":[
-        "CNN",
-        '#CC1417',
-        require("../assets/img/sources-small/cnn.png")
-    ],
-    "al-jazeera":[
-        "Al Jazeera",
-        '#fff',
-        require("../assets/img/sources-small/al-jazeera.png")
-    ],
-    "mtv-news":[
-        "MTV News",
-        '#fff',
-        require("../assets/img/sources-small/mtv-news.png")
-    ],
-    "business-insider":[
-        "Business Insider",
-        '#E6E6E6',
-        require("../assets/img/sources-small/business-insider.png")
-    ],
-    "the-wall-street-journal":[
-        "The Wall Street Journal",
-        '#fff',
-        require("../assets/img/sources-small/the-wall-street-journal.png")
-    ],
-    "espn":[
-        "ESPN",
-        '#DC1D00',
-        require("../assets/img/sources-small/espn.png")
-    ],
-    "entertainment-weekly":[
-        "Enter. Weekly",
-        '#1FC6CE',
-        require("../assets/img/sources-small/entertainment-weekly.png")
-    ]
 }
