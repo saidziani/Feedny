@@ -3,10 +3,10 @@
 ### A Free/Open source personalized press review.
 
 ------------------------------
-
-<div style="text-align: center"> 
+  
+<p align="center">
   <img src="http://sumrized.com/feedny/logo.png" alt="Feedny_logo" />
-</div>
+</p>
 
 The Internet plays an increasingly important part in our daily lives as a source of written content for news and leisure. Yet it is tedious and difficult to sort through this staggering flow of information and stay updated with changes in our world, even using automated tools. Reading magazines and newspapers is too time-consuming, and there is a huge amount of online content that is updated or generated each minute.</br>
 Our solution considers each user’s interests and leverages ```Artificial Intelligence```, ```Machine Learning``` and ```Natural Language Processing``` in order to suggest to relevant articles from the internet. 
@@ -52,7 +52,9 @@ Our solution considers each user’s interests and leverages ```Artificial Intel
 This project is licensed under the [GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html).
 
 -------------------------------
-<div style="text-align: center">
-### Made with <img src="http://sumrized.com/feedny/heart.png" alt="heart" /> in Algiers
-</div>
+
+<p align="center">
+  Made with <img src="http://sumrized.com/feedny/heart.png" alt="heart" /> in Algiers
+</p>
+
 -------------------------------
