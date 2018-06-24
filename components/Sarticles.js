@@ -10,11 +10,14 @@ import ArticleRow from './Row'
 import Toprow from './Toprow'
 import {Utils} from './Utils'
 
-
+let _this = null;
+let check = require('../assets/img/icons/check.png');
+let checkPlein = require('../assets/img/icons/checkPlein.png');
 
 export default class Sarticles extends React.Component {
 
     static navigationOptions = ({navigation}) => {
+
         return {
             title: `${Utils.realSources[navigation.state.params.source][0]}`.toUpperCase(),
             headerStyle: { backgroundColor: `${Utils.realSources[navigation.state.params.source][1]}`, elevation: 0 },
@@ -24,13 +27,15 @@ export default class Sarticles extends React.Component {
                   <Image style={{marginLeft: 10}} source={require('../assets/img/icons/back.png')} />
                 </TouchableOpacity>,
             headerRight:
-                <TouchableOpacity>
+                <TouchableOpacity onPress={ () => { _this.saveIt(navigation.state.params.source) }}>
                   <Image style={{marginRight: 10}} source={require('../assets/img/icons/check.png')} />
                 </TouchableOpacity>
         }
     }
 
-
+    componentDidMount() {
+        _this = this;
+    }
 
     constructor(props) {
         super(props);
@@ -44,11 +49,15 @@ export default class Sarticles extends React.Component {
     }
 
     fetchArticles() {
-        axios.get(`http://`+Utils.ip+`:5000/api/articles/source=`+this.state.source).then((response) => {
+        axios.get(`http://`+Utils.ip+`:5000/api/articles/source=`+this.state.source+`,username=Saïd`).then((response) => {
             this.setState({articles: response.data})
         }).catch((error)=>{console.log(error)})
     }
 
+    saveIt(source){
+        axios.get(`http://`+Utils.ip+`:5000/api/profiles/update/preferences/username=Saïd,source=`+source).then((response) => {{console.log(response)}
+        }).catch((error)=>{console.log(error)})
+    }
 
     render() {
         if (this.state.articles != null) {

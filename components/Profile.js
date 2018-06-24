@@ -41,15 +41,22 @@ export default class Profile extends React.Component {
             // category: this.props.navigation.state.params.category,
             category: "world",
             articles: null,
-            account: 'imene'
+            account: 'imene',
+            subscriptions: null
         }
-        this.fetchArticles()
+        this.fetchArticles(),
+        this.fetchSubscriptions()
     }
 
     fetchArticles() {
-        // axios.get(`http://`+ip+`:5000/api/articles/category=`+this.state.category).then((response) => {
-        axios.get(`http://`+Utils.ip+`:5000/api/articles/category=world`).then((response) => {
+        axios.get(`http://`+Utils.ip+`:5000/api/articles/saved/username=Saïd`).then((response) => {
             this.setState({articles: response.data})
+        }).catch((error)=>{console.log(error)})
+    }
+
+    fetchSubscriptions() {
+        axios.get(`http://`+Utils.ip+`:5000/api/profiles/subscriptions/username=Saïd`).then((response) => {
+            this.setState({subscriptions: response.data}, console.log(response.data))
         }).catch((error)=>{console.log(error)})
     }
 
@@ -156,6 +163,7 @@ export default class Profile extends React.Component {
                             <View style={{padding:15, backgroundColor: '#fff'}}>
                                 <Text style={{fontSize: 20}}>SUBSCRIPTIONS</Text>
                             </View>
+                            {console.log(this.state.subscriptions)}
                             <View>
                             <Row style={{height: 170, backgroundColor: '#fff'}}>
                               <Swiper showsButtons={false} autoplayTimeout={3.5} autoplay={true} showsPagination={false}>

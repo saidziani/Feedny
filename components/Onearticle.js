@@ -8,25 +8,42 @@ import Container from './Container';
 import axios from 'axios'
 import {Utils} from './Utils'
 
+let _this = null;
+
+
+let bookmark = require('../assets/img/icons/bookmark.png');
+let bookmarkPlein = require('../assets/img/icons/bookmarkPlein.png');
+
 export default class Onearticle extends React.Component{
 
+    
     static navigationOptions = ({navigation}) => {
+        let icon = '';
+        if (navigation.state.params.article.article.iPrefer === 1){
+            icon = bookmarkPlein;
+        }
+        if (navigation.state.params.article.article.iPrefer === 0){
+            icon = bookmark;
+        }
+        
         return {
             title: `${Utils.realCategories[navigation.state.params.article.article.categoryPredicted][0]}`,
             headerStyle: { backgroundColor: `${Utils.realCategories[navigation.state.params.article.article.categoryPredicted][1]}`},
-            headerTitleStyle: { color: "#fff",textAlign:"center", flex:1 },
+            headerTitleStyle: {color: "#fff",textAlign:"center", flex:1},
             headerLeft:
                 <TouchableOpacity onPress={ () => { navigation.goBack() }}>
                   <Image style={{marginLeft: 10}} source={require('../assets/img/icons/back.png')} />
                 </TouchableOpacity>,
             headerRight:
-                <TouchableOpacity>
-                  <Image style={{marginRight: 10}} source={require('../assets/img/icons/bookmark.png')} />
+                <TouchableOpacity onPress={ () => { _this.saveIt(navigation.state.params.article.article._id) }}>
+                  <Image style={{marginRight: 10}}  source={icon}/>
                 </TouchableOpacity>
         }
     }
-    
 
+    componentDidMount() {
+        _this = this;
+    }
     constructor(props) {
         super(props);
         this.state = {
@@ -48,6 +65,7 @@ export default class Onearticle extends React.Component{
                 ar:['الملخص', 'المقال'],
             },
             article: this.props.navigation.state.params.article.article,
+            iPrefer: this.props.navigation.state.params.article.article.iPrefer,
         }
         this.sendCategory()
     }
@@ -56,6 +74,13 @@ export default class Onearticle extends React.Component{
         axios.get(`http://`+Utils.ip+`:5000/api/profiles/update/username=Saïd,category=`+this.state.article.categoryPredicted).then((response) => {{console.log(response)}
         }).catch((error)=>{console.log(error)})
     }
+
+    saveIt(id){
+        axios.get(`http://`+Utils.ip+`:5000/api/profiles/update/preferences/username=Saïd,article=`+id).then((response) => {{console.log(response)}
+        }).catch((error)=>{console.log(error)})
+    }
+
+
 
     render (){
             if (this.state.article === null) {

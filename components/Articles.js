@@ -11,6 +11,7 @@ import Toprow from './Toprow'
 import {Utils} from './Utils'
 
 
+let _this = null;
 
 export default class Articles extends React.Component {
 
@@ -25,12 +26,15 @@ export default class Articles extends React.Component {
                   <Image style={{marginLeft: 10}} source={require('../assets/img/icons/back.png')} />
                 </TouchableOpacity>,
             headerRight:
-                <TouchableOpacity>
+                <TouchableOpacity onPress={ () => { _this.saveIt(navigation.state.params.category) }}>
                   <Image style={{marginRight: 10}} source={require('../assets/img/icons/check.png')} />
                 </TouchableOpacity>
         }
     }
 
+    componentDidMount() {
+        _this = this;
+    }
 
     constructor(props) {
         super(props);
@@ -44,11 +48,15 @@ export default class Articles extends React.Component {
     }
 
     fetchArticles() {
-        axios.get(`http://`+Utils.ip+`:5000/api/articles/category=`+this.state.category).then((response) => {
+        axios.get(`http://`+Utils.ip+`:5000/api/articles/category=`+this.state.category+`,username=Saïd`).then((response) => {
             this.setState({articles: response.data})
         }).catch((error)=>{console.log(error)})
     }
 
+    saveIt(category){
+        axios.get(`http://`+Utils.ip+`:5000/api/profiles/update/preferences/username=Saïd,category=`+category).then((response) => {{console.log(response)}
+        }).catch((error)=>{console.log(error)})
+    }
 
     render() {
         if (this.state.articles != null) {
