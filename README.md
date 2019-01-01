@@ -18,16 +18,16 @@ Our solution considers each user’s interests and leverages ```Artificial Intel
 ## User Interface
 ### `English Version`
 <div style="text-align: center"> 
-  <img src="https://s3.amazonaws.com/saidziani/Feedny/1.png" style="width:30%" alt="Feedny English version" />
-  <img src="https://s3.amazonaws.com/saidziani/Feedny/2.png" style="width:30%" alt="Feedny English version" />
-  <img src="https://s3.amazonaws.com/saidziani/Feedny/3.png" style="width:30%" alt="Feedny English version" />
-  <img src="https://s3.amazonaws.com/saidziani/Feedny/4.png" style="width:30%" alt="Feedny English version" />
-  <img src="https://s3.amazonaws.com/saidziani/Feedny/5.png" style="width:30%" alt="Feedny English version" />
-  <img src="https://s3.amazonaws.com/saidziani/Feedny/6.png" style="width:30%" alt="Feedny English version" />
-  <img src="https://s3.amazonaws.com/saidziani/Feedny/7.png" style="width:30%" alt="Feedny English version" />
-  <img src="https://s3.amazonaws.com/saidziani/Feedny/8.png" style="width:30%" alt="Feedny English version" />
-  <img src="https://s3.amazonaws.com/saidziani/Feedny/9.png" style="width:30%" alt="Feedny English version" />
-  <img src="https://s3.amazonaws.com/saidziani/Feedny/10.png" style="width:100%" alt="Feedny English version" />
+  <img src="https://s3.amazonaws.com/saidziani/Feedny/1.png" width="30%" alt="Feedny English version" />
+  <img src="https://s3.amazonaws.com/saidziani/Feedny/2.png" width="30%" alt="Feedny English version" />
+  <img src="https://s3.amazonaws.com/saidziani/Feedny/3.png" width="30%" alt="Feedny English version" />
+  <img src="https://s3.amazonaws.com/saidziani/Feedny/4.png" width="30%" alt="Feedny English version" />
+  <img src="https://s3.amazonaws.com/saidziani/Feedny/5.png" width="30%" alt="Feedny English version" />
+  <img src="https://s3.amazonaws.com/saidziani/Feedny/6.png" width="30%" alt="Feedny English version" />
+  <img src="https://s3.amazonaws.com/saidziani/Feedny/7.png" width="30%" alt="Feedny English version" />
+  <img src="https://s3.amazonaws.com/saidziani/Feedny/8.png" width="30%" alt="Feedny English version" />
+  <img src="https://s3.amazonaws.com/saidziani/Feedny/9.png" width="30%" alt="Feedny English version" />
+  <img src="https://s3.amazonaws.com/saidziani/Feedny/10.png" width="100%" alt="Feedny English version" />
 </div>
 
 -------------------------------
