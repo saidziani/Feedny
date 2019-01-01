@@ -7,7 +7,7 @@
 ------------------------------
   
 <p align="center">
-  <img src="http://sumrized.com/feedny/logo.png" alt="Feedny_logo" />
+  <img src="https://s3.amazonaws.com/saidziani/Feedny/logo.png" alt="Feedny_logo" />
 </p>
 
 The Internet plays an increasingly important part in our daily lives as a source of written content for news and leisure. Yet it is tedious and difficult to sort through this staggering flow of information and stay updated with changes in our world, even using automated tools. Reading magazines and newspapers is too time-consuming, and there is a huge amount of online content that is updated or generated each minute.</br>
@@ -18,7 +18,16 @@ Our solution considers each user’s interests and leverages ```Artificial Intel
 ## User Interface
 ### `English Version`
 <div style="text-align: center"> 
-  <img src="http://sumrized.com/feedny/feedny_ui_english.png" alt="Feedny English version" />
+  <img src="https://s3.amazonaws.com/saidziani/Feedny/1.png" style="width:30%" alt="Feedny English version" />
+  <img src="https://s3.amazonaws.com/saidziani/Feedny/2.png" style="width:30%" alt="Feedny English version" />
+  <img src="https://s3.amazonaws.com/saidziani/Feedny/3.png" style="width:30%" alt="Feedny English version" />
+  <img src="https://s3.amazonaws.com/saidziani/Feedny/4.png" style="width:30%" alt="Feedny English version" />
+  <img src="https://s3.amazonaws.com/saidziani/Feedny/5.png" style="width:30%" alt="Feedny English version" />
+  <img src="https://s3.amazonaws.com/saidziani/Feedny/6.png" style="width:30%" alt="Feedny English version" />
+  <img src="https://s3.amazonaws.com/saidziani/Feedny/7.png" style="width:30%" alt="Feedny English version" />
+  <img src="https://s3.amazonaws.com/saidziani/Feedny/8.png" style="width:30%" alt="Feedny English version" />
+  <img src="https://s3.amazonaws.com/saidziani/Feedny/9.png" style="width:30%" alt="Feedny English version" />
+  <img src="https://s3.amazonaws.com/saidziani/Feedny/10.png" style="width:100%" alt="Feedny English version" />
 </div>
 
 -------------------------------
@@ -56,7 +65,7 @@ This project is licensed under the [GPLv3](https://www.gnu.org/licenses/gpl-3.0.
 -------------------------------
 
 <p align="center">
-  Made with <img src="http://sumrized.com/feedny/heart.png" alt="heart" /> in Algiers
+  Made with <img src="https://s3.amazonaws.com/saidziani/Feedny/heart.png" alt="heart" /> in Algiers
 </p>
 
 -------------------------------
